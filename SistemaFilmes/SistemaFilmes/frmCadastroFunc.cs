@@ -9,18 +9,16 @@ using System.Windows.Forms;
 
 namespace SistemaFilmes
 {
-    public partial class frmPrincipal : Form
+    public partial class frmCadastroFunc : Form
     {
-        public frmPrincipal()
+        public frmCadastroFunc()
         {
             InitializeComponent();
         }
 
-        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            frmCadastroFunc objtela = new frmCadastroFunc();
-            objtela.MdiParent = this;
-            objtela.Show();
+
         }
     }
 }
