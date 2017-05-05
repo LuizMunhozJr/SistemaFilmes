@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaFilmes", "SistemaFilmes\SistemaFilmes.csproj", "{594AC631-592E-4AD3-B032-93A08246BFEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "SistemaFilmes\GUI.csproj", "{594AC631-592E-4AD3-B032-93A08246BFEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{C1A23340-36B5-4A0B-8C14-397B65632B3C}"
 EndProject
