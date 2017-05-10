@@ -44,11 +44,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCadastroArtista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroArtista.Designer.cs">
+      <DependentUpon>frmCadastroArtista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadastroCli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroCli.Designer.cs">
+      <DependentUpon>frmCadastroCli.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadastroFunc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCadastroFunc.Designer.cs">
       <DependentUpon>frmCadastroFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadastroItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroItem.Designer.cs">
+      <DependentUpon>frmCadastroItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDevolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDevolucao.Designer.cs">
+      <DependentUpon>frmDevolucao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenero.Designer.cs">
+      <DependentUpon>frmGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLocacao.Designer.cs">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -58,8 +94,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCadastroArtista.resx">
+      <DependentUpon>frmCadastroArtista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadastroCli.resx">
+      <DependentUpon>frmCadastroCli.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroFunc.resx">
       <DependentUpon>frmCadastroFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadastroItem.resx">
+      <DependentUpon>frmCadastroItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDevolucao.resx">
+      <DependentUpon>frmDevolucao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenero.resx">
+      <DependentUpon>frmGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLocacao.resx">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
