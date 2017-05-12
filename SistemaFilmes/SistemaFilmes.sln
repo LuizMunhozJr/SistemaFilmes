@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "SistemaFilmes\GUI.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{C1A23340-36B5-4A0B-8C14-397B65632B3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{4AC4DE6C-428D-4D5A-B593-587D955C2527}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C1A23340-36B5-4A0B-8C14-397B65632B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1A23340-36B5-4A0B-8C14-397B65632B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1A23340-36B5-4A0B-8C14-397B65632B3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AC4DE6C-428D-4D5A-B593-587D955C2527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC4DE6C-428D-4D5A-B593-587D955C2527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC4DE6C-428D-4D5A-B593-587D955C2527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC4DE6C-428D-4D5A-B593-587D955C2527}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
