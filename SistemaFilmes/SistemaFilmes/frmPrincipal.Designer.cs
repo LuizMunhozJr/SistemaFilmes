@@ -121,14 +121,14 @@
             // lOCAÇÃOToolStripMenuItem1
             // 
             this.lOCAÇÃOToolStripMenuItem1.Name = "lOCAÇÃOToolStripMenuItem1";
-            this.lOCAÇÃOToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.lOCAÇÃOToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
             this.lOCAÇÃOToolStripMenuItem1.Text = "Locação";
             this.lOCAÇÃOToolStripMenuItem1.Click += new System.EventHandler(this.lOCAÇÃOToolStripMenuItem1_Click);
             // 
             // devoluçãoToolStripMenuItem
             // 
             this.devoluçãoToolStripMenuItem.Name = "devoluçãoToolStripMenuItem";
-            this.devoluçãoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.devoluçãoToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.devoluçãoToolStripMenuItem.Text = "Devolução";
             this.devoluçãoToolStripMenuItem.Click += new System.EventHandler(this.devoluçãoToolStripMenuItem_Click);
             // 
