@@ -38,9 +38,7 @@ namespace SistemaFilmes
         public Cliente SelecCli()
         {
             Cliente objCli = new Cliente();
-            try
-            {
-                objCli.Codigo = Convert.ToInt32(txtCodFunc.Text);
+                
                 objCli.CEL = txtCel.Text;
                 objCli.CEP = txtCEP.Text;
                 objCli.Cidade = txtCidade.Text;
@@ -55,12 +53,6 @@ namespace SistemaFilmes
                 objCli.Status = cbStatus.Checked;
                 objCli.TEL = txtTel.Text;
                 objCli.UF = cbUF.Text;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
 
             return objCli;
         }
@@ -71,6 +63,11 @@ namespace SistemaFilmes
             clienteDAL cliDAL = new clienteDAL();
 
             cliDAL.InserirCliente(objCli);
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
