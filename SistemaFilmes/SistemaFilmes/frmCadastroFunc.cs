@@ -70,20 +70,28 @@ namespace SistemaFilmes
             funcionarioDAL funcDAL = new funcionarioDAL();
             Funcionario objfunc = funcDAL.BuscarFuncionario(Convert.ToInt32(txtCodFunc.Text));
 
-            txtCel.Text = objfunc.CEL;
-            txtCEP.Text = objfunc.CEP;
-            txtCidade.Text = objfunc.Cidade;
-            txtCPF.Text = objfunc.CPF;
-            txtEmail.Text = objfunc.Email;
-            txtEnd.Text = objfunc.Endereco;
-            txtNome.Text = objfunc.Nome;
-            txtRG.Text = objfunc.RG;
-            txtTel.Text = objfunc.TEL;
-            cbEC.Text = objfunc.EstadoCivil;
-            cbSexo.Text = objfunc.Sexo;
-            cbStatus.Checked =Convert.ToBoolean(objfunc.Status);
-            cbUF.Text = objfunc.UF;
-            dtpDtNascimento.Value = objfunc.DtNascto;
+            //LimparTela();
+            if (objfunc == null)
+            {
+                MessageBox.Show("Funcionário não encontrado !");
+            }
+            else
+            {
+                txtCel.Text = objfunc.CEL;
+                txtCEP.Text = objfunc.CEP;
+                txtCidade.Text = objfunc.Cidade;
+                txtCPF.Text = objfunc.CPF;
+                txtEmail.Text = objfunc.Email;
+                txtEnd.Text = objfunc.Endereco;
+                txtNome.Text = objfunc.Nome;
+                txtRG.Text = objfunc.RG;
+                txtTel.Text = objfunc.TEL;
+                cbEC.Text = objfunc.EstadoCivil;
+                cbSexo.Text = objfunc.Sexo;
+                cbStatus.Checked = Convert.ToBoolean(objfunc.Status);
+                cbUF.Text = objfunc.UF;
+                dtpDtNascimento.Value = objfunc.DtNascto;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
