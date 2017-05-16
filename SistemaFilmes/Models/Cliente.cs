@@ -10,7 +10,7 @@ namespace Models
         public int Codigo { get; set; }
         public string Nome { get; set; }
         public DateTime DtNascto { get; set; }
-        public char Sexo { get; set; }
+        public string Sexo { get; set; }
         public string EstadoCivil { get; set; }
         public string RG { get; set; }
         public string CPF { get; set; }

@@ -41,22 +41,19 @@
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtCEP = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtRG = new System.Windows.Forms.TextBox();
             this.txtEnd = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNomeFunc = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -65,6 +62,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbUF = new System.Windows.Forms.ComboBox();
+            this.dtpDtNascimento = new System.Windows.Forms.DateTimePicker();
+            this.cbStatus = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,7 @@
             this.btnInserir.TabIndex = 39;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnBuscar
             // 
@@ -131,7 +132,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(127, 235);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(121, 20);
             this.txtEmail.TabIndex = 103;
             // 
             // label12
@@ -147,7 +148,7 @@
             // 
             this.txtCel.Location = new System.Drawing.Point(127, 210);
             this.txtCel.Name = "txtCel";
-            this.txtCel.Size = new System.Drawing.Size(100, 20);
+            this.txtCel.Size = new System.Drawing.Size(121, 20);
             this.txtCel.TabIndex = 101;
             // 
             // label11
@@ -163,7 +164,7 @@
             // 
             this.txtTel.Location = new System.Drawing.Point(127, 185);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(100, 20);
+            this.txtTel.Size = new System.Drawing.Size(121, 20);
             this.txtTel.TabIndex = 99;
             // 
             // txtCEP
@@ -181,16 +182,6 @@
             this.label15.Size = new System.Drawing.Size(34, 13);
             this.label15.TabIndex = 82;
             this.label15.Text = "CEP: ";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(132, 262);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 17);
-            this.checkBox1.TabIndex = 109;
-            this.checkBox1.Text = "Ativo";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -240,13 +231,6 @@
             this.label5.TabIndex = 94;
             this.label5.Text = "RG: ";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(127, 58);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(221, 20);
-            this.dateTimePicker1.TabIndex = 93;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -265,12 +249,12 @@
             this.label3.TabIndex = 91;
             this.label3.Text = "Data de Nascimento: ";
             // 
-            // txtNomeFunc
+            // txtNome
             // 
-            this.txtNomeFunc.Location = new System.Drawing.Point(127, 33);
-            this.txtNomeFunc.Name = "txtNomeFunc";
-            this.txtNomeFunc.Size = new System.Drawing.Size(402, 20);
-            this.txtNomeFunc.TabIndex = 90;
+            this.txtNome.Location = new System.Drawing.Point(127, 33);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(402, 20);
+            this.txtNome.TabIndex = 90;
             // 
             // label7
             // 
@@ -308,13 +292,6 @@
             this.label2.TabIndex = 89;
             this.label2.Text = "Nome: ";
             // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(127, 85);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(280, 20);
-            this.txtEstado.TabIndex = 81;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -333,9 +310,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbUF);
             this.groupBox2.Controls.Add(this.txtCEP);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.txtEstado);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtCidade);
             this.groupBox2.Controls.Add(this.label8);
@@ -384,8 +361,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbStatus);
+            this.groupBox1.Controls.Add(this.dtpDtNascimento);
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.cbSexo);
             this.groupBox1.Controls.Add(this.cbEC);
@@ -400,10 +378,9 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtRG);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtNomeFunc);
+            this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtCodFunc);
             this.groupBox1.Controls.Add(this.label1);
@@ -413,6 +390,40 @@
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pessoais";
+            // 
+            // cbUF
+            // 
+            this.cbUF.FormattingEnabled = true;
+            this.cbUF.Items.AddRange(new object[] {
+            "SP",
+            "MG",
+            "RJ",
+            "MG",
+            "RS"});
+            this.cbUF.Location = new System.Drawing.Point(127, 85);
+            this.cbUF.MaxLength = 2;
+            this.cbUF.Name = "cbUF";
+            this.cbUF.Size = new System.Drawing.Size(121, 21);
+            this.cbUF.TabIndex = 85;
+            // 
+            // dtpDtNascimento
+            // 
+            this.dtpDtNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDtNascimento.Location = new System.Drawing.Point(127, 58);
+            this.dtpDtNascimento.Name = "dtpDtNascimento";
+            this.dtpDtNascimento.Size = new System.Drawing.Size(194, 20);
+            this.dtpDtNascimento.TabIndex = 111;
+            this.dtpDtNascimento.Value = new System.DateTime(2017, 5, 11, 0, 0, 0, 0);
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.AutoSize = true;
+            this.cbStatus.Location = new System.Drawing.Point(127, 262);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(50, 17);
+            this.cbStatus.TabIndex = 112;
+            this.cbStatus.Text = "Ativo";
+            this.cbStatus.UseVisualStyleBackColor = true;
             // 
             // frmCadastroCli
             // 
@@ -450,22 +461,19 @@
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtRG;
         private System.Windows.Forms.TextBox txtEnd;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNomeFunc;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -474,5 +482,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cbUF;
+        private System.Windows.Forms.DateTimePicker dtpDtNascimento;
+        private System.Windows.Forms.CheckBox cbStatus;
     }
 }
