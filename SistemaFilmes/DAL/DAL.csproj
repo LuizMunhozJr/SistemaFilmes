@@ -43,6 +43,7 @@
     <Compile Include="clienteDAL.cs" />
     <Compile Include="itemDAL.cs" />
     <Compile Include="funcionarioDAL.cs" />
+    <Compile Include="locacaoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
