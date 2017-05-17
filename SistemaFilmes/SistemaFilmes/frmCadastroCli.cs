@@ -38,7 +38,9 @@ namespace SistemaFilmes
         public Cliente SelecCli()
         {
             Cliente objCli = new Cliente();
-                
+
+            if (txtCod.Text != string.Empty)
+                objCli.Codigo = Convert.ToInt32(txtCod.Text);
                 objCli.CEL = txtCel.Text;
                 objCli.CEP = txtCEP.Text;
                 objCli.Cidade = txtCidade.Text;
@@ -56,18 +58,64 @@ namespace SistemaFilmes
 
             return objCli;
         }
-
+               
         private void btnInserir_Click(object sender, EventArgs e)
         {
             Cliente objCli = SelecCli();
             clienteDAL cliDAL = new clienteDAL();
 
             cliDAL.InserirCliente(objCli);
+            LimparTela();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            Cliente objCli = SelecCli();
+            clienteDAL cliDAL = new clienteDAL();
+            cliDAL.AlterarCliente(objCli);
+            MessageBox.Show("Alterado");
+        }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            clienteDAL cliDAL = new clienteDAL();
+            Cliente objCli = cliDAL.BuscarCliente(Convert.ToInt32(txtCod.Text));
+
+            //LimparTela();
+            if (objCli == null)
+            {
+                MessageBox.Show("Funcionário não encontrado !");
+            }
+            else
+            {
+                txtCel.Text = objCli.CEL;
+                txtCEP.Text = objCli.CEP;
+                txtCidade.Text = objCli.Cidade;
+                txtCPF.Text = objCli.CPF;
+                txtEmail.Text = objCli.Email;
+                txtEnd.Text = objCli.Endereco;
+                txtNome.Text = objCli.Nome;
+                txtRG.Text = objCli.RG;
+                txtTel.Text = objCli.TEL;
+                cbEC.Text = objCli.EstadoCivil;
+                cbSexo.Text = objCli.Sexo;
+                cbStatus.Checked = Convert.ToBoolean(objCli.Status);
+                cbUF.Text = objCli.UF;
+                dtpDtNascimento.Value = objCli.DtNascto;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimparTela();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            clienteDAL cliDAL = new clienteDAL();
+            cliDAL.ExcluirCliente(Convert.ToInt32(txtCod.Text));
+            LimparTela();
+            MessageBox.Show("Exluido");
         }
     }
 }

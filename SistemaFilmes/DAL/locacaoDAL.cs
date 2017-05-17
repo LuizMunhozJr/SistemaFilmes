@@ -37,9 +37,9 @@ namespace DAL
                     l.cdFilme = Convert.ToInt32(dr["cdFilme"]);
                     l.cdCli = Convert.ToInt32(dr["cdCli"]);
                     l.dtRetirada = Convert.ToDateTime(dr["dtRetirada"]);
-                    l.dtDevolucao = Convert.ToDateTime(dr["dtDevolucao"]); ;
-                    l.StatusPG = dr["StatusPG"].ToString();
-                    l.qdteFilmesLocados = dr.HasRows
+                    l.dtDevolucao = Convert.ToDateTime(dr["dtDevolucao"]); 
+                    // l.StatusPG = dr["StatusPG"].ToString();
+                    //l.qdteFilmesLocados = dr.HasRows
 
                 }
             }

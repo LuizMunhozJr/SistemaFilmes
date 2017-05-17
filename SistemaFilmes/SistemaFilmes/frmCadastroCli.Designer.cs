@@ -57,14 +57,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbUF = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtCodFunc = new System.Windows.Forms.TextBox();
+            this.txtCod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbUF = new System.Windows.Forms.ComboBox();
-            this.dtpDtNascimento = new System.Windows.Forms.DateTimePicker();
             this.cbStatus = new System.Windows.Forms.CheckBox();
+            this.dtpDtNascimento = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +87,7 @@
             this.btnBuscar.TabIndex = 110;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label14
             // 
@@ -107,6 +108,7 @@
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(121, 21);
             this.cbSexo.TabIndex = 107;
+            this.cbSexo.Text = "teste";
             // 
             // cbEC
             // 
@@ -118,6 +120,7 @@
             this.cbEC.Name = "cbEC";
             this.cbEC.Size = new System.Drawing.Size(121, 21);
             this.cbEC.TabIndex = 106;
+            this.cbEC.Text = "teste";
             // 
             // label13
             // 
@@ -131,9 +134,11 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(127, 235);
+            this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(121, 20);
             this.txtEmail.TabIndex = 103;
+            this.txtEmail.Text = "teste";
             // 
             // label12
             // 
@@ -147,9 +152,11 @@
             // txtCel
             // 
             this.txtCel.Location = new System.Drawing.Point(127, 210);
+            this.txtCel.MaxLength = 10;
             this.txtCel.Name = "txtCel";
             this.txtCel.Size = new System.Drawing.Size(121, 20);
             this.txtCel.TabIndex = 101;
+            this.txtCel.Text = "teste";
             // 
             // label11
             // 
@@ -163,16 +170,20 @@
             // txtTel
             // 
             this.txtTel.Location = new System.Drawing.Point(127, 185);
+            this.txtTel.MaxLength = 10;
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(121, 20);
             this.txtTel.TabIndex = 99;
+            this.txtTel.Text = "teste";
             // 
             // txtCEP
             // 
             this.txtCEP.Location = new System.Drawing.Point(127, 34);
+            this.txtCEP.MaxLength = 10;
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(280, 20);
             this.txtCEP.TabIndex = 83;
+            this.txtCEP.Text = "teste";
             // 
             // label15
             // 
@@ -195,9 +206,11 @@
             // txtCPF
             // 
             this.txtCPF.Location = new System.Drawing.Point(127, 160);
+            this.txtCPF.MaxLength = 10;
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(121, 20);
             this.txtCPF.TabIndex = 97;
+            this.txtCPF.Text = "teste";
             // 
             // label6
             // 
@@ -211,16 +224,20 @@
             // txtRG
             // 
             this.txtRG.Location = new System.Drawing.Point(127, 135);
+            this.txtRG.MaxLength = 10;
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(121, 20);
             this.txtRG.TabIndex = 95;
+            this.txtRG.Text = "teste";
             // 
             // txtEnd
             // 
             this.txtEnd.Location = new System.Drawing.Point(127, 9);
+            this.txtEnd.MaxLength = 40;
             this.txtEnd.Name = "txtEnd";
             this.txtEnd.Size = new System.Drawing.Size(543, 20);
             this.txtEnd.TabIndex = 77;
+            this.txtEnd.Text = "teste";
             // 
             // label5
             // 
@@ -252,9 +269,11 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(127, 33);
+            this.txtNome.MaxLength = 60;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(402, 20);
             this.txtNome.TabIndex = 90;
+            this.txtNome.Text = "teste";
             // 
             // label7
             // 
@@ -273,6 +292,7 @@
             this.btnCancelar.TabIndex = 42;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAlterar
             // 
@@ -305,9 +325,11 @@
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(127, 59);
+            this.txtCidade.MaxLength = 40;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(280, 20);
             this.txtCidade.TabIndex = 79;
+            this.txtCidade.Text = "teste";
             // 
             // groupBox2
             // 
@@ -324,7 +346,23 @@
             this.groupBox2.Size = new System.Drawing.Size(689, 123);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Endereço";
+            this.groupBox2.Text = "teste";
+            // 
+            // cbUF
+            // 
+            this.cbUF.FormattingEnabled = true;
+            this.cbUF.Items.AddRange(new object[] {
+            "SP",
+            "MG",
+            "RJ",
+            "MG",
+            "RS"});
+            this.cbUF.Location = new System.Drawing.Point(127, 85);
+            this.cbUF.MaxLength = 2;
+            this.cbUF.Name = "cbUF";
+            this.cbUF.Size = new System.Drawing.Size(121, 21);
+            this.cbUF.TabIndex = 85;
+            this.cbUF.Text = "SP";
             // 
             // label8
             // 
@@ -335,12 +373,12 @@
             this.label8.TabIndex = 78;
             this.label8.Text = "Cidade: ";
             // 
-            // txtCodFunc
+            // txtCod
             // 
-            this.txtCodFunc.Location = new System.Drawing.Point(127, 8);
-            this.txtCodFunc.Name = "txtCodFunc";
-            this.txtCodFunc.Size = new System.Drawing.Size(100, 20);
-            this.txtCodFunc.TabIndex = 88;
+            this.txtCod.Location = new System.Drawing.Point(127, 8);
+            this.txtCod.Name = "txtCod";
+            this.txtCod.Size = new System.Drawing.Size(100, 20);
+            this.txtCod.TabIndex = 88;
             // 
             // label1
             // 
@@ -359,6 +397,7 @@
             this.btnExcluir.TabIndex = 41;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // groupBox1
             // 
@@ -383,7 +422,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCodFunc);
+            this.groupBox1.Controls.Add(this.txtCod);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(17, 10);
             this.groupBox1.Name = "groupBox1";
@@ -391,30 +430,6 @@
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pessoais";
-            // 
-            // cbUF
-            // 
-            this.cbUF.FormattingEnabled = true;
-            this.cbUF.Items.AddRange(new object[] {
-            "SP",
-            "MG",
-            "RJ",
-            "MG",
-            "RS"});
-            this.cbUF.Location = new System.Drawing.Point(127, 85);
-            this.cbUF.MaxLength = 2;
-            this.cbUF.Name = "cbUF";
-            this.cbUF.Size = new System.Drawing.Size(121, 21);
-            this.cbUF.TabIndex = 85;
-            // 
-            // dtpDtNascimento
-            // 
-            this.dtpDtNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDtNascimento.Location = new System.Drawing.Point(127, 58);
-            this.dtpDtNascimento.Name = "dtpDtNascimento";
-            this.dtpDtNascimento.Size = new System.Drawing.Size(194, 20);
-            this.dtpDtNascimento.TabIndex = 111;
-            this.dtpDtNascimento.Value = new System.DateTime(2017, 5, 11, 0, 0, 0, 0);
             // 
             // cbStatus
             // 
@@ -425,6 +440,15 @@
             this.cbStatus.TabIndex = 112;
             this.cbStatus.Text = "Ativo";
             this.cbStatus.UseVisualStyleBackColor = true;
+            // 
+            // dtpDtNascimento
+            // 
+            this.dtpDtNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDtNascimento.Location = new System.Drawing.Point(127, 58);
+            this.dtpDtNascimento.Name = "dtpDtNascimento";
+            this.dtpDtNascimento.Size = new System.Drawing.Size(194, 20);
+            this.dtpDtNascimento.TabIndex = 111;
+            this.dtpDtNascimento.Value = new System.DateTime(2017, 5, 11, 0, 0, 0, 0);
             // 
             // frmCadastroCli
             // 
@@ -479,7 +503,7 @@
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtCodFunc;
+        private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.GroupBox groupBox1;

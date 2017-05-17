@@ -23,7 +23,7 @@ namespace DAL
             {
                 conn.Open();
 
-                string sql = "INSERT INTO clientes VALUES (@nmCli, @dtCli, @sxCli, @ecCli, @rgCli, @cpfCli, @endCli, @cidCli, @cepCli, @ufCli, @telCli, @celCli, @emailCli, @stsCli)";
+                string sql = "INSERT INTO Clientes VALUES (@nmCli, @dtCli, @sxCli, @ecCli, @rgCli, @cpfCli, @endCli, @cidCli, @cepCli, @ufCli, @telCli, @celCli, @emailCli, @stsCli)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@nmCli", objcliente.Nome);
                 cmd.Parameters.AddWithValue("@dtCli", objcliente.DtNascto);
