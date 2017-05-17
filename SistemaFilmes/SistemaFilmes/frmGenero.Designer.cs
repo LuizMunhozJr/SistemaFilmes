@@ -30,9 +30,9 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtNomeFunc = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCodFunc = new System.Windows.Forms.TextBox();
+            this.txtCod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -44,9 +44,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.txtNomeFunc);
+            this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCodFunc);
+            this.groupBox1.Controls.Add(this.txtCod);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -63,13 +63,14 @@
             this.btnBuscar.TabIndex = 110;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtNomeFunc
+            // txtNome
             // 
-            this.txtNomeFunc.Location = new System.Drawing.Point(112, 44);
-            this.txtNomeFunc.Name = "txtNomeFunc";
-            this.txtNomeFunc.Size = new System.Drawing.Size(402, 20);
-            this.txtNomeFunc.TabIndex = 90;
+            this.txtNome.Location = new System.Drawing.Point(112, 44);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(402, 20);
+            this.txtNome.TabIndex = 90;
             // 
             // label2
             // 
@@ -80,12 +81,12 @@
             this.label2.TabIndex = 89;
             this.label2.Text = "Nome: ";
             // 
-            // txtCodFunc
+            // txtCod
             // 
-            this.txtCodFunc.Location = new System.Drawing.Point(112, 19);
-            this.txtCodFunc.Name = "txtCodFunc";
-            this.txtCodFunc.Size = new System.Drawing.Size(100, 20);
-            this.txtCodFunc.TabIndex = 88;
+            this.txtCod.Location = new System.Drawing.Point(112, 19);
+            this.txtCod.Name = "txtCod";
+            this.txtCod.Size = new System.Drawing.Size(100, 20);
+            this.txtCod.TabIndex = 88;
             // 
             // label1
             // 
@@ -104,6 +105,7 @@
             this.btnInserir.TabIndex = 47;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnCancelar
             // 
@@ -122,6 +124,7 @@
             this.btnAlterar.TabIndex = 48;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnExcluir
             // 
@@ -131,6 +134,7 @@
             this.btnExcluir.TabIndex = 49;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // frmGenero
             // 
@@ -154,9 +158,9 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtNomeFunc;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCodFunc;
+        private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnCancelar;
