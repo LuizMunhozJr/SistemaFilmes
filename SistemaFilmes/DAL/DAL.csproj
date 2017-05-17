@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="artistaDAL.cs" />
     <Compile Include="clienteDAL.cs" />
+    <Compile Include="generoDAL.cs" />
     <Compile Include="itemDAL.cs" />
     <Compile Include="funcionarioDAL.cs" />
     <Compile Include="locacaoDAL.cs" />
