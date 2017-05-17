@@ -15,5 +15,20 @@ namespace SistemaFilmes
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInserirImagem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "jpg|*.jpg";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.ImageLocation = file.FileName;
+            }
+        }
     }
 }
