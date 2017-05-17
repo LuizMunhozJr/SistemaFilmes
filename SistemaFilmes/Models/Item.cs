@@ -8,7 +8,7 @@ namespace Models
     public class Item
     {
         public int Codigo { get; set; }
-        public int CodigoDeBarras { get; set; }
+        public string CodigoDeBarras { get; set; }
         public string Descricao { get; set; }
         public int Ano { get; set; }
         public string Tipo { get; set; }
