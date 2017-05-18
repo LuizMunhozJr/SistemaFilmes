@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpCompra = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbTipoItem = new System.Windows.Forms.ComboBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.txtAno = new System.Windows.Forms.TextBox();
+            this.btnAdicionarGen = new System.Windows.Forms.Button();
+            this.cbGenero = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCodBar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.cbTipo = new System.Windows.Forms.ComboBox();
@@ -39,23 +49,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNomeFunc = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCodFunc = new System.Windows.Forms.TextBox();
+            this.txtCod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCodBar = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cbGenero = new System.Windows.Forms.ComboBox();
-            this.btnAdicionarGen = new System.Windows.Forms.Button();
-            this.txtAno = new System.Windows.Forms.TextBox();
-            this.txtPreco = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbTipoItem = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
             this.dtpRetirada = new System.Windows.Forms.DateTimePicker();
             this.txtDiretor = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -64,8 +66,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
-            this.label16 = new System.Windows.Forms.Label();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -78,7 +78,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpCompra);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.cbTipoItem);
             this.groupBox1.Controls.Add(this.txtPreco);
@@ -98,9 +98,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtNomeFunc);
+            this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCodFunc);
+            this.groupBox1.Controls.Add(this.txtCod);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -108,6 +108,90 @@
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Item";
+            // 
+            // dtpCompra
+            // 
+            this.dtpCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpCompra.Location = new System.Drawing.Point(104, 181);
+            this.dtpCompra.Name = "dtpCompra";
+            this.dtpCompra.Size = new System.Drawing.Size(121, 20);
+            this.dtpCompra.TabIndex = 121;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(66, 231);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 13);
+            this.label9.TabIndex = 120;
+            this.label9.Text = "Tipo: ";
+            // 
+            // cbTipoItem
+            // 
+            this.cbTipoItem.FormattingEnabled = true;
+            this.cbTipoItem.Items.AddRange(new object[] {
+            "Locado",
+            "Livre"});
+            this.cbTipoItem.Location = new System.Drawing.Point(102, 229);
+            this.cbTipoItem.Name = "cbTipoItem";
+            this.cbTipoItem.Size = new System.Drawing.Size(121, 21);
+            this.cbTipoItem.TabIndex = 119;
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.Location = new System.Drawing.Point(104, 157);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(121, 20);
+            this.txtPreco.TabIndex = 118;
+            // 
+            // txtAno
+            // 
+            this.txtAno.Location = new System.Drawing.Point(104, 108);
+            this.txtAno.Name = "txtAno";
+            this.txtAno.Size = new System.Drawing.Size(100, 20);
+            this.txtAno.TabIndex = 117;
+            // 
+            // btnAdicionarGen
+            // 
+            this.btnAdicionarGen.Location = new System.Drawing.Point(304, 81);
+            this.btnAdicionarGen.Name = "btnAdicionarGen";
+            this.btnAdicionarGen.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionarGen.TabIndex = 116;
+            this.btnAdicionarGen.Text = "Adicionar";
+            this.btnAdicionarGen.UseVisualStyleBackColor = true;
+            // 
+            // cbGenero
+            // 
+            this.cbGenero.FormattingEnabled = true;
+            this.cbGenero.Location = new System.Drawing.Point(104, 83);
+            this.cbGenero.Name = "cbGenero";
+            this.cbGenero.Size = new System.Drawing.Size(194, 21);
+            this.cbGenero.TabIndex = 115;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(54, 87);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 113;
+            this.label8.Text = "Gênero: ";
+            // 
+            // txtCodBar
+            // 
+            this.txtCodBar.Location = new System.Drawing.Point(104, 59);
+            this.txtCodBar.Name = "txtCodBar";
+            this.txtCodBar.Size = new System.Drawing.Size(100, 20);
+            this.txtCodBar.TabIndex = 112;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 13);
+            this.label7.TabIndex = 111;
+            this.label7.Text = "Codigo de Barras: ";
             // 
             // btnBuscar
             // 
@@ -197,12 +281,12 @@
             this.label3.TabIndex = 91;
             this.label3.Text = "Ano: ";
             // 
-            // txtNomeFunc
+            // txtNome
             // 
-            this.txtNomeFunc.Location = new System.Drawing.Point(104, 35);
-            this.txtNomeFunc.Name = "txtNomeFunc";
-            this.txtNomeFunc.Size = new System.Drawing.Size(402, 20);
-            this.txtNomeFunc.TabIndex = 90;
+            this.txtNome.Location = new System.Drawing.Point(104, 35);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(402, 20);
+            this.txtNome.TabIndex = 90;
             // 
             // label2
             // 
@@ -213,12 +297,12 @@
             this.label2.TabIndex = 89;
             this.label2.Text = "Nome: ";
             // 
-            // txtCodFunc
+            // txtCod
             // 
-            this.txtCodFunc.Location = new System.Drawing.Point(104, 11);
-            this.txtCodFunc.Name = "txtCodFunc";
-            this.txtCodFunc.Size = new System.Drawing.Size(100, 20);
-            this.txtCodFunc.TabIndex = 88;
+            this.txtCod.Location = new System.Drawing.Point(104, 11);
+            this.txtCod.Name = "txtCod";
+            this.txtCod.Size = new System.Drawing.Size(100, 20);
+            this.txtCod.TabIndex = 88;
             // 
             // label1
             // 
@@ -228,62 +312,6 @@
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 87;
             this.label1.Text = "Código: ";
-            // 
-            // txtCodBar
-            // 
-            this.txtCodBar.Location = new System.Drawing.Point(104, 59);
-            this.txtCodBar.Name = "txtCodBar";
-            this.txtCodBar.Size = new System.Drawing.Size(100, 20);
-            this.txtCodBar.TabIndex = 112;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 13);
-            this.label7.TabIndex = 111;
-            this.label7.Text = "Codigo de Barras: ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(54, 87);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 13);
-            this.label8.TabIndex = 113;
-            this.label8.Text = "Gênero: ";
-            // 
-            // cbGenero
-            // 
-            this.cbGenero.FormattingEnabled = true;
-            this.cbGenero.Location = new System.Drawing.Point(104, 83);
-            this.cbGenero.Name = "cbGenero";
-            this.cbGenero.Size = new System.Drawing.Size(194, 21);
-            this.cbGenero.TabIndex = 115;
-            // 
-            // btnAdicionarGen
-            // 
-            this.btnAdicionarGen.Location = new System.Drawing.Point(304, 81);
-            this.btnAdicionarGen.Name = "btnAdicionarGen";
-            this.btnAdicionarGen.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionarGen.TabIndex = 116;
-            this.btnAdicionarGen.Text = "Adicionar";
-            this.btnAdicionarGen.UseVisualStyleBackColor = true;
-            // 
-            // txtAno
-            // 
-            this.txtAno.Location = new System.Drawing.Point(104, 108);
-            this.txtAno.Name = "txtAno";
-            this.txtAno.Size = new System.Drawing.Size(100, 20);
-            this.txtAno.TabIndex = 117;
-            // 
-            // txtPreco
-            // 
-            this.txtPreco.Location = new System.Drawing.Point(104, 157);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(121, 20);
-            this.txtPreco.TabIndex = 118;
             // 
             // groupBox2
             // 
@@ -322,32 +350,21 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Situação";
             // 
-            // label9
+            // dtpDevolucao
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(66, 231);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 13);
-            this.label9.TabIndex = 120;
-            this.label9.Text = "Tipo: ";
+            this.dtpDevolucao.Location = new System.Drawing.Point(112, 71);
+            this.dtpDevolucao.Name = "dtpDevolucao";
+            this.dtpDevolucao.Size = new System.Drawing.Size(200, 20);
+            this.dtpDevolucao.TabIndex = 131;
             // 
-            // cbTipoItem
+            // label16
             // 
-            this.cbTipoItem.FormattingEnabled = true;
-            this.cbTipoItem.Items.AddRange(new object[] {
-            "Locado",
-            "Livre"});
-            this.cbTipoItem.Location = new System.Drawing.Point(102, 229);
-            this.cbTipoItem.Name = "cbTipoItem";
-            this.cbTipoItem.Size = new System.Drawing.Size(121, 21);
-            this.cbTipoItem.TabIndex = 119;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(104, 181);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 121;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(5, 73);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(106, 13);
+            this.label16.TabIndex = 130;
+            this.label16.Text = "Devolução Prevista: ";
             // 
             // dtpRetirada
             // 
@@ -412,22 +429,6 @@
             this.label15.Size = new System.Drawing.Size(41, 13);
             this.label15.TabIndex = 122;
             this.label15.Text = "Nome: ";
-            // 
-            // dtpDevolucao
-            // 
-            this.dtpDevolucao.Location = new System.Drawing.Point(112, 71);
-            this.dtpDevolucao.Name = "dtpDevolucao";
-            this.dtpDevolucao.Size = new System.Drawing.Size(200, 20);
-            this.dtpDevolucao.TabIndex = 131;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(5, 73);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(106, 13);
-            this.label16.TabIndex = 130;
-            this.label16.Text = "Devolução Prevista: ";
             // 
             // btnInserir
             // 
@@ -502,9 +503,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNomeFunc;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCodFunc;
+        private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.TextBox txtAno;
@@ -513,7 +514,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCodBar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpCompra;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbTipoItem;
         private System.Windows.Forms.GroupBox groupBox2;

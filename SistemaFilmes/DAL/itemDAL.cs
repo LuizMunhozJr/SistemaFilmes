@@ -82,8 +82,7 @@ namespace DAL
                         I.DataLancamento = Convert.ToDateTime(dr["dtItem"]);
                         I.Situacao = Convert.ToBoolean(dr["situItem"]);
                         I.Diretor = dr["diretorItem"].ToString();
-                        I.Imagem = Convert.ToByte(dr["imgItem"]);
-                        
+                        I.Imagem = Convert.ToByte(dr["imgItem"]);                        
 
                         lista.Add(I);
                     }

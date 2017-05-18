@@ -108,7 +108,7 @@
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(121, 21);
             this.cbSexo.TabIndex = 107;
-            this.cbSexo.Text = "teste";
+            this.cbSexo.Text = " ";
             // 
             // cbEC
             // 
@@ -120,7 +120,7 @@
             this.cbEC.Name = "cbEC";
             this.cbEC.Size = new System.Drawing.Size(121, 21);
             this.cbEC.TabIndex = 106;
-            this.cbEC.Text = "teste";
+            this.cbEC.Text = " ";
             // 
             // label13
             // 
@@ -138,7 +138,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(121, 20);
             this.txtEmail.TabIndex = 103;
-            this.txtEmail.Text = "teste";
+            this.txtEmail.Text = " ";
             // 
             // label12
             // 
@@ -156,7 +156,7 @@
             this.txtCel.Name = "txtCel";
             this.txtCel.Size = new System.Drawing.Size(121, 20);
             this.txtCel.TabIndex = 101;
-            this.txtCel.Text = "teste";
+            this.txtCel.Text = " ";
             // 
             // label11
             // 
@@ -174,7 +174,7 @@
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(121, 20);
             this.txtTel.TabIndex = 99;
-            this.txtTel.Text = "teste";
+            this.txtTel.Text = " ";
             // 
             // txtCEP
             // 
@@ -183,7 +183,7 @@
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(280, 20);
             this.txtCEP.TabIndex = 83;
-            this.txtCEP.Text = "teste";
+            this.txtCEP.Text = " ";
             // 
             // label15
             // 
@@ -210,7 +210,7 @@
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(121, 20);
             this.txtCPF.TabIndex = 97;
-            this.txtCPF.Text = "teste";
+            this.txtCPF.Text = " ";
             // 
             // label6
             // 
@@ -228,7 +228,7 @@
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(121, 20);
             this.txtRG.TabIndex = 95;
-            this.txtRG.Text = "teste";
+            this.txtRG.Text = " ";
             // 
             // txtEnd
             // 
@@ -237,7 +237,7 @@
             this.txtEnd.Name = "txtEnd";
             this.txtEnd.Size = new System.Drawing.Size(543, 20);
             this.txtEnd.TabIndex = 77;
-            this.txtEnd.Text = "teste";
+            this.txtEnd.Text = " ";
             // 
             // label5
             // 
@@ -273,7 +273,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(402, 20);
             this.txtNome.TabIndex = 90;
-            this.txtNome.Text = "teste";
+            this.txtNome.Text = " ";
             // 
             // label7
             // 
@@ -329,7 +329,7 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(280, 20);
             this.txtCidade.TabIndex = 79;
-            this.txtCidade.Text = "teste";
+            this.txtCidade.Text = " ";
             // 
             // groupBox2
             // 
@@ -362,7 +362,7 @@
             this.cbUF.Name = "cbUF";
             this.cbUF.Size = new System.Drawing.Size(121, 21);
             this.cbUF.TabIndex = 85;
-            this.cbUF.Text = "SP";
+            this.cbUF.Text = " ";
             // 
             // label8
             // 
