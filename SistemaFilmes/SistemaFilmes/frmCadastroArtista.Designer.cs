@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnInserirImagem = new System.Windows.Forms.Button();
+            this.pbArtista = new System.Windows.Forms.PictureBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtRG = new System.Windows.Forms.TextBox();
+            this.txtPaisArt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpNactoArtista = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNomeFunc = new System.Windows.Forms.TextBox();
+            this.txtNomeArt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCodFunc = new System.Windows.Forms.TextBox();
+            this.txtCodArt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvItensArtista = new System.Windows.Forms.DataGridView();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnInserirImagem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArtista)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItensArtista)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnInserirImagem);
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pbArtista);
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.txtRG);
+            this.groupBox1.Controls.Add(this.txtPaisArt);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpNactoArtista);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtNomeFunc);
+            this.groupBox1.Controls.Add(this.txtNomeArt);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCodFunc);
+            this.groupBox1.Controls.Add(this.txtCodArt);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(10, 13);
             this.groupBox1.Name = "groupBox1";
@@ -72,15 +72,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Artista";
             // 
-            // pictureBox1
+            // btnInserirImagem
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(551, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 111);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 111;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnInserirImagem.Location = new System.Drawing.Point(551, 133);
+            this.btnInserirImagem.Name = "btnInserirImagem";
+            this.btnInserirImagem.Size = new System.Drawing.Size(100, 23);
+            this.btnInserirImagem.TabIndex = 112;
+            this.btnInserirImagem.Text = "Inserir Imagem";
+            this.btnInserirImagem.UseVisualStyleBackColor = true;
+            this.btnInserirImagem.Click += new System.EventHandler(this.btnInserirImagem_Click);
+            // 
+            // pbArtista
+            // 
+            this.pbArtista.Location = new System.Drawing.Point(551, 16);
+            this.pbArtista.Name = "pbArtista";
+            this.pbArtista.Size = new System.Drawing.Size(100, 111);
+            this.pbArtista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbArtista.TabIndex = 111;
+            this.pbArtista.TabStop = false;
+            this.pbArtista.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnBuscar
             // 
@@ -90,13 +100,14 @@
             this.btnBuscar.TabIndex = 110;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtRG
+            // txtPaisArt
             // 
-            this.txtRG.Location = new System.Drawing.Point(112, 95);
-            this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(221, 20);
-            this.txtRG.TabIndex = 95;
+            this.txtPaisArt.Location = new System.Drawing.Point(112, 95);
+            this.txtPaisArt.Name = "txtPaisArt";
+            this.txtPaisArt.Size = new System.Drawing.Size(221, 20);
+            this.txtPaisArt.TabIndex = 95;
             // 
             // label5
             // 
@@ -107,12 +118,12 @@
             this.label5.TabIndex = 94;
             this.label5.Text = "Pais de Nascimento: ";
             // 
-            // dateTimePicker1
+            // dtpNactoArtista
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(112, 69);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(221, 20);
-            this.dateTimePicker1.TabIndex = 93;
+            this.dtpNactoArtista.Location = new System.Drawing.Point(112, 69);
+            this.dtpNactoArtista.Name = "dtpNactoArtista";
+            this.dtpNactoArtista.Size = new System.Drawing.Size(221, 20);
+            this.dtpNactoArtista.TabIndex = 93;
             // 
             // label3
             // 
@@ -123,12 +134,12 @@
             this.label3.TabIndex = 91;
             this.label3.Text = "Data de Nascimento: ";
             // 
-            // txtNomeFunc
+            // txtNomeArt
             // 
-            this.txtNomeFunc.Location = new System.Drawing.Point(112, 44);
-            this.txtNomeFunc.Name = "txtNomeFunc";
-            this.txtNomeFunc.Size = new System.Drawing.Size(402, 20);
-            this.txtNomeFunc.TabIndex = 90;
+            this.txtNomeArt.Location = new System.Drawing.Point(112, 44);
+            this.txtNomeArt.Name = "txtNomeArt";
+            this.txtNomeArt.Size = new System.Drawing.Size(402, 20);
+            this.txtNomeArt.TabIndex = 90;
             // 
             // label2
             // 
@@ -139,12 +150,12 @@
             this.label2.TabIndex = 89;
             this.label2.Text = "Nome: ";
             // 
-            // txtCodFunc
+            // txtCodArt
             // 
-            this.txtCodFunc.Location = new System.Drawing.Point(112, 19);
-            this.txtCodFunc.Name = "txtCodFunc";
-            this.txtCodFunc.Size = new System.Drawing.Size(100, 20);
-            this.txtCodFunc.TabIndex = 88;
+            this.txtCodArt.Location = new System.Drawing.Point(112, 19);
+            this.txtCodArt.Name = "txtCodArt";
+            this.txtCodArt.Size = new System.Drawing.Size(100, 20);
+            this.txtCodArt.TabIndex = 88;
             // 
             // label1
             // 
@@ -157,7 +168,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvItensArtista);
             this.groupBox2.Location = new System.Drawing.Point(10, 216);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(689, 225);
@@ -165,13 +176,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filmes do Artista";
             // 
-            // dataGridView1
+            // dgvItensArtista
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(675, 199);
-            this.dataGridView1.TabIndex = 40;
+            this.dgvItensArtista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItensArtista.Location = new System.Drawing.Point(7, 19);
+            this.dgvItensArtista.Name = "dgvItensArtista";
+            this.dgvItensArtista.Size = new System.Drawing.Size(675, 199);
+            this.dgvItensArtista.TabIndex = 40;
             // 
             // btnInserir
             // 
@@ -181,6 +192,7 @@
             this.btnInserir.TabIndex = 43;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnCancelar
             // 
@@ -199,6 +211,7 @@
             this.btnAlterar.TabIndex = 44;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnExcluir
             // 
@@ -208,16 +221,7 @@
             this.btnExcluir.TabIndex = 45;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnInserirImagem
-            // 
-            this.btnInserirImagem.Location = new System.Drawing.Point(551, 133);
-            this.btnInserirImagem.Name = "btnInserirImagem";
-            this.btnInserirImagem.Size = new System.Drawing.Size(100, 23);
-            this.btnInserirImagem.TabIndex = 112;
-            this.btnInserirImagem.Text = "Inserir Imagem";
-            this.btnInserirImagem.UseVisualStyleBackColor = true;
-            this.btnInserirImagem.Click += new System.EventHandler(this.btnInserirImagem_Click);
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // frmCadastroArtista
             // 
@@ -234,9 +238,9 @@
             this.Text = "Cadastro de Artistas";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArtista)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItensArtista)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,21 +249,21 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtRG;
+        private System.Windows.Forms.TextBox txtPaisArt;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpNactoArtista;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNomeFunc;
+        private System.Windows.Forms.TextBox txtNomeArt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCodFunc;
+        private System.Windows.Forms.TextBox txtCodArt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvItensArtista;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbArtista;
         private System.Windows.Forms.Button btnInserirImagem;
     }
 }

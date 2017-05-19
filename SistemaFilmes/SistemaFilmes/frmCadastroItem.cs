@@ -18,7 +18,7 @@ namespace SistemaFilmes
             InitializeComponent();
         }
 
-        public Item SelectItem()
+    /*    public Item SelectItem()
         {
             Item objItem = new Item();
             objItem.Codigo =Convert.ToInt32(txtCod.Text);
@@ -27,7 +27,7 @@ namespace SistemaFilmes
             objItem.Preco = Convert.ToDecimal(txtPreco.Text);
 
             //return
-        }
+        }*/
        
     }
 }

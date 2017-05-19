@@ -70,7 +70,7 @@ namespace DAL
                             a.Nome = dr["nmArt"].ToString();
                             a.DtNascto = Convert.ToDateTime(dr["dtArt"]);
                             a.Naturalidade = dr["natuArt"].ToString();
-                            a.Imagem = Convert.ToByte(dr["imgArt"]);
+                            a.Imagem = (byte[])(dr["imgArt"]);
                            
 
                             lista.Add(a);
@@ -115,8 +115,8 @@ namespace DAL
                     a.Nome = dr["nmArt"].ToString();
                     a.DtNascto = Convert.ToDateTime(dr["dtArt"]);
                     a.Naturalidade = dr["natuArt"].ToString();
-                    a.Imagem = Convert.ToByte(dr["imgArt"]);
-                }
+                    a.Imagem = (byte[]) (dr["imgArt"]);
+                    }
                 }
                 catch (Exception)
                 {
@@ -186,6 +186,49 @@ namespace DAL
                         conn.Close();
                 }
             }
+        public List<Item> SelecionarItensDoArtista(int codigo)
+        {
+            List<Item> lista = new List<Item>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+                string sql = "select * from Itens where cdItem = (select cdItem from Participacoes where cdArt = @codigo)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@codigo", codigo);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    Item i;
+                    while (dr.Read())
+                    {
+                        i = new Item();
+                        i.Codigo = Convert.ToInt32(dr["cdFilme"]);
+                        i.CodigoDeBarras = dr["cddbarFilme"].ToString();
+                        i.Descricao = dr["dsFilme"].ToString();
+                        i.Preco = Convert.ToDecimal(dr["precoFilme"]);
+
+                        lista.Add(i);
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return lista;
         }
+    }
 }
 
