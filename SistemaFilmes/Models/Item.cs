@@ -13,10 +13,10 @@ namespace Models
         public int Ano { get; set; }
         public string Tipo { get; set; }
         public Decimal  Preco { get; set; }
-        public DateTime DataLancamento { get; set; }
+        public DateTime DtCompra { get; set; }
         public Decimal VlCusto { get; set; }
         public bool Situacao { get; set; }
         public string  Diretor { get; set; }
-        public byte Imagem { get; set; }
+        public Byte[] Imagem { get; set; }
     }
 }

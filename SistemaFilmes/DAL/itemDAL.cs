@@ -23,14 +23,14 @@ namespace DAL
             {
                 conn.Open();
 
-                string sql = "INSERT INTO Itens VALUES (@cdbarItem, @dsItem, @anoItem, @tipoItem, @precoItem, @dtItem, @vlcustoItem, @situItem, @diretorItem, @imgItem)";
+                string sql = "INSERT INTO Itens VALUES (@cdbarItem, @dsItem, @anoItem, @tipoItem, @precoItem, @dtCompra, @vlcustoItem, @situItem, @diretorItem, @imgItem)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@cdbarItem", objItem.CodigoDeBarras);
                 cmd.Parameters.AddWithValue("@dsItem", objItem.Descricao);
                 cmd.Parameters.AddWithValue("@anoItem", objItem.Ano);
                 cmd.Parameters.AddWithValue("@tipoItem", objItem.Tipo);
                 cmd.Parameters.AddWithValue("@precoItem", objItem.Preco);
-                cmd.Parameters.AddWithValue("@dtItem", objItem.DataLancamento);
+                cmd.Parameters.AddWithValue("@dtCompra", objItem.DtCompra);
                 cmd.Parameters.AddWithValue("@vlcustoItem", objItem.VlCusto);
                 cmd.Parameters.AddWithValue("@situItem", objItem.Situacao);
                 cmd.Parameters.AddWithValue("@diretorItem", objItem.Diretor);
@@ -73,16 +73,16 @@ namespace DAL
                     {
                         I = new Item();
                         I.Codigo = Convert.ToInt32(dr["cdItem"]);
-                        I.CodigoDeBarras = dr["cddbarItem"].ToString();
+                        I.CodigoDeBarras = dr["cdbarItem"].ToString();
                         I.Descricao = dr["dsItem"].ToString();
-                        I.Ano = Convert.ToInt32(dr["dtItem"]);
+                        I.Ano = Convert.ToInt32(dr["dtCompra"]);
                         I.Tipo = dr["tipoItem"].ToString();
                         I.Preco = Convert.ToDecimal(dr["precoItem"]);
                         I.VlCusto = Convert.ToDecimal(dr["vlcustoItem"]);
-                        I.DataLancamento = Convert.ToDateTime(dr["dtItem"]);
+                        I.DtCompra = Convert.ToDateTime(dr["dtCompra"]);
                         I.Situacao = Convert.ToBoolean(dr["situItem"]);
                         I.Diretor = dr["diretorItem"].ToString();
-                        I.Imagem = Convert.ToByte(dr["imgItem"]);                        
+                        I.Imagem = (byte[])dr["imgItem"];
 
                         lista.Add(I);
                     }
@@ -123,16 +123,16 @@ namespace DAL
                 {
                     I = new Item();
                     I.Codigo = Convert.ToInt32(dr["cdItem"]);
-                    I.CodigoDeBarras = dr["cddbarItem"].ToString();
+                    I.CodigoDeBarras = dr["cdbarItem"].ToString();
                     I.Descricao = dr["dsItem"].ToString();
-                    I.Ano = Convert.ToInt32(dr["dtItem"]);
+                    I.Ano = Convert.ToInt32(dr["anoItem"]);
                     I.Tipo = dr["tipoItem"].ToString();
                     I.Preco = Convert.ToDecimal(dr["precoItem"]);
                     I.VlCusto = Convert.ToDecimal(dr["vlcustoItem"]);
-                    I.DataLancamento = Convert.ToDateTime(dr["dtItem"]);
+                    I.DtCompra = Convert.ToDateTime(dr["dtCompra"]);
                     I.Situacao = Convert.ToBoolean(dr["situItem"]);
                     I.Diretor = dr["diretorItem"].ToString();
-                    I.Imagem = Convert.ToByte(dr["imgItem"]);
+                    I.Imagem = (byte[])dr["imgItem"];                    
                 }
             }
             catch (Exception)
@@ -157,7 +157,7 @@ namespace DAL
             {
                 conn.Open();
 
-                string sql = "SELECT * FROM Itens WHERE cddbarItem = @codigo";
+                string sql = "SELECT * FROM Itens WHERE cdbarItem = @codigo";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@codigo", cod);
 
@@ -167,16 +167,16 @@ namespace DAL
                 {
                     I = new Item();
                     I.Codigo = Convert.ToInt32(dr["cdItem"]);
-                    I.CodigoDeBarras = dr["cddbarItem"].ToString();
+                    I.CodigoDeBarras = dr["cdbarItem"].ToString();
                     I.Descricao = dr["dsItem"].ToString();
-                    I.Ano = Convert.ToInt32(dr["dtItem"]);
+                    I.Ano = Convert.ToInt32(dr["dtCompra"]);
                     I.Tipo = dr["tipoItem"].ToString();
                     I.Preco = Convert.ToDecimal(dr["precoItem"]);
                     I.VlCusto = Convert.ToDecimal(dr["vlcustoItem"]);
-                    I.DataLancamento = Convert.ToDateTime(dr["dtItem"]);
+                    I.DtCompra = Convert.ToDateTime(dr["dtCompra"]);
                     I.Situacao = Convert.ToBoolean(dr["situItem"]);
                     I.Diretor = dr["diretorItem"].ToString();
-                    I.Imagem = Convert.ToByte(dr["imgItem"]);
+                    I.Imagem = (byte[])dr["imgItem"];
                 }
             }
             catch (Exception)
@@ -193,7 +193,7 @@ namespace DAL
         }
 
         
-        public void AlteraFuncionario(Item objItem)
+        public void AlteraItem(Item objItem)
         {
             SqlConnection conn = new SqlConnection(connectionString);
 
@@ -201,18 +201,20 @@ namespace DAL
             {
                 conn.Open();
 
-                string sql = "UPDATE Itens SET cdbarItem=@cdbarItem, dsItem=@dsItem, anoItem=@anoItem, tipoItem=@tipoItem, precoItem=@precoItem, dtItem=@dtItem, vlcustoItem=@vlcustoItem, situItem=@situItem, diretorItem=@diretorItem, imgItem=@imgItem";
+                string sql = "UPDATE Itens SET cdbarItem=@cdbar, dsItem=@dsItem, anoItem=@anoItem, tipoItem=@tipoItem, precoItem=@precoItem, dtCompra=@dtCompra, vlcustoItem=@vlcustoItem, situItem=@situItem, diretorItem=@diretorItem, imgItem=@imgItem WHERE cdItem=@codItem";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@cdbarItem", objItem.CodigoDeBarras);
+                cmd.Parameters.AddWithValue("@codItem", objItem.Codigo);
+                cmd.Parameters.AddWithValue("@cdbar", objItem.CodigoDeBarras);
                 cmd.Parameters.AddWithValue("@dsItem", objItem.Descricao);
                 cmd.Parameters.AddWithValue("@anoItem", objItem.Ano);
                 cmd.Parameters.AddWithValue("@tipoItem", objItem.Tipo);
                 cmd.Parameters.AddWithValue("@precoItem", objItem.Preco);
-                cmd.Parameters.AddWithValue("@dtItem", objItem.DataLancamento);
+                cmd.Parameters.AddWithValue("@dtCompra", objItem.DtCompra);
                 cmd.Parameters.AddWithValue("@vlcustoItem", objItem.VlCusto);
                 cmd.Parameters.AddWithValue("@situItem", objItem.Situacao);
                 cmd.Parameters.AddWithValue("@diretorItem", objItem.Diretor);
                 cmd.Parameters.AddWithValue("@imgItem", objItem.Imagem);
+                cmd.ExecuteNonQuery();
             }
             catch (Exception)
             {
