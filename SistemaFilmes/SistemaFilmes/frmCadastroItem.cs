@@ -19,7 +19,27 @@ namespace SistemaFilmes
             InitializeComponent();
         }
 
-        public Item SelectItem()
+        private void limparTela()
+        {
+            foreach (var GB in this.Controls.OfType<GroupBox>())
+            {
+                foreach (var txt in GB.Controls.OfType<TextBox>())                
+                    txt.Text = null;
+                
+
+                foreach (var data in GB.Controls.OfType<DateTimePicker>())                
+                    data.Value = DateTime.Now;
+
+                foreach (var combobox in GB.Controls.OfType<ComboBox>())
+                    combobox.Text = null;
+
+            }
+            pbItem.Image = null;
+            pbItem.Refresh();
+
+        }
+
+        private Item SelectItem()
         {
             Item objItem = new Item();
             if (txtCod.Text!=string.Empty)
@@ -60,6 +80,8 @@ namespace SistemaFilmes
             Item objItem = SelectItem();
             itemDAL iDAL = new itemDAL();
             iDAL.InserirItem(objItem);
+            limparTela();
+            MessageBox.Show("Item inserido");
         }
 
         
