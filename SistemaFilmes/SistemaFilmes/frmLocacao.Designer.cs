@@ -36,7 +36,7 @@
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtCod = new System.Windows.Forms.TextBox();
+            this.txtCodFun = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -47,7 +47,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodLocacao = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -123,7 +123,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtCod);
+            this.groupBox2.Controls.Add(this.txtCodFun);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(3, 65);
             this.groupBox2.Name = "groupBox2";
@@ -132,12 +132,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Funcionario";
             // 
-            // txtCod
+            // txtCodFun
             // 
-            this.txtCod.Location = new System.Drawing.Point(49, 16);
-            this.txtCod.Name = "txtCod";
-            this.txtCod.Size = new System.Drawing.Size(100, 20);
-            this.txtCod.TabIndex = 92;
+            this.txtCodFun.Location = new System.Drawing.Point(49, 16);
+            this.txtCodFun.Name = "txtCodFun";
+            this.txtCodFun.Size = new System.Drawing.Size(100, 20);
+            this.txtCodFun.TabIndex = 92;
             // 
             // label1
             // 
@@ -232,12 +232,12 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtCodLocacao
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 94;
+            this.txtCodLocacao.Location = new System.Drawing.Point(92, 12);
+            this.txtCodLocacao.Name = "txtCodLocacao";
+            this.txtCodLocacao.Size = new System.Drawing.Size(100, 20);
+            this.txtCodLocacao.TabIndex = 94;
             // 
             // label5
             // 
@@ -256,6 +256,7 @@
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label7
             // 
@@ -271,7 +272,6 @@
             this.cbStatusPagamento.FormattingEnabled = true;
             this.cbStatusPagamento.Items.AddRange(new object[] {
             "PAGO",
-            "PAGO PARCIAL",
             "NÃO"});
             this.cbStatusPagamento.Location = new System.Drawing.Point(92, 39);
             this.cbStatusPagamento.Name = "cbStatusPagamento";
@@ -286,7 +286,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbStatusPagamento);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCodLocacao);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.btnCancelar);
@@ -318,7 +318,7 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtCod;
+        private System.Windows.Forms.TextBox txtCodFun;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpAtual;
         private System.Windows.Forms.Label label3;
@@ -331,7 +331,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodLocacao;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label7;
