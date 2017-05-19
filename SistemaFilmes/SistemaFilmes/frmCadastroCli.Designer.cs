@@ -461,6 +461,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCadastroCli";
             this.Text = "Cadastro de Clientes";
             this.groupBox2.ResumeLayout(false);

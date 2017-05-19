@@ -61,8 +61,8 @@ namespace DAL
                     while (dr.Read())
                     {
                         G = new Genero();
-                        G.Codigo = Convert.ToInt32(dr["CdGenero"]);
-                        G.Nome = dr["nmFunc"].ToString();
+                        G.Codigo = Convert.ToInt32(dr["cdGen"]);
+                        G.Nome = dr["nmGen"].ToString();                        
 
                         lista.Add(G);
                     }

@@ -22,12 +22,12 @@ namespace SistemaFilmes
         {
             itemDAL iDAL = new itemDAL();
             cbItens.DataSource = iDAL.ListarItens();
-            cbItens.DisplayMember = "dsItem";
-            cbItens.ValueMember = "cdItem";
+            cbItens.DisplayMember = "Descricao";
+            cbItens.ValueMember ="Codigo";
         }
         private void frmLocacao_Load(object sender, EventArgs e)
         {
-            
+            CBcarregarItens();
         }
 
         private void btnInserir_Click(object sender, EventArgs e)

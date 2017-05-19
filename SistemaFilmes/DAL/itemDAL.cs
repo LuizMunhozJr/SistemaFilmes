@@ -75,7 +75,7 @@ namespace DAL
                         I.Codigo = Convert.ToInt32(dr["cdItem"]);
                         I.CodigoDeBarras = dr["cdbarItem"].ToString();
                         I.Descricao = dr["dsItem"].ToString();
-                        I.Ano = Convert.ToInt32(dr["dtCompra"]);
+                        I.Ano = Convert.ToInt32(dr["anoItem"]);
                         I.Tipo = dr["tipoItem"].ToString();
                         I.Preco = Convert.ToDecimal(dr["precoItem"]);
                         I.VlCusto = Convert.ToDecimal(dr["vlcustoItem"]);

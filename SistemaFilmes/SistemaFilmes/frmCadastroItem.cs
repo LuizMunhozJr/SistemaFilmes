@@ -77,11 +77,16 @@ namespace SistemaFilmes
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            Item objItem = SelectItem();
-            itemDAL iDAL = new itemDAL();
-            iDAL.InserirItem(objItem);
-            limparTela();
-            MessageBox.Show("Item inserido");
+            if (pbItem.Image != null)
+            {
+                Item objItem = SelectItem();
+                itemDAL iDAL = new itemDAL();
+                iDAL.InserirItem(objItem);
+                limparTela();
+                MessageBox.Show("Item inserido");
+            }
+            else
+                MessageBox.Show("Imagem Requerida");
         }
 
         
@@ -115,6 +120,23 @@ namespace SistemaFilmes
             pbItem.Refresh();                  
 
             
+        }
+
+        private void frmCadastroItem_Load(object sender, EventArgs e)
+        {
+            generoDAL gDAL = new generoDAL();;
+            cbGeneros.DataSource = gDAL.ListarGeneros();
+            cbGeneros.DisplayMember = "Nome";
+            cbGeneros.ValueMember = "Codigo";       
+        }
+
+        private void btnAdicionarGen_Click(object sender, EventArgs e)
+        {
+            Genero objGen = new Genero();
+            objGen.Codigo = Convert.ToInt32(cbGeneros.SelectedValue);
+            objGen.Nome = cbGeneros.Text;
+
+            dgvGeneros.Rows.Add(objGen.Codigo,objGen.Nome);
         }
     }
 }

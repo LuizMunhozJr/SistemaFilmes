@@ -146,6 +146,7 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmGenero";
             this.Text = "Cadastro de Gênero";
             this.groupBox1.ResumeLayout(false);

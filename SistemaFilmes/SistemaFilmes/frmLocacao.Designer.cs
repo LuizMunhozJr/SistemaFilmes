@@ -52,6 +52,10 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cbStatusPagamento = new System.Windows.Forms.ComboBox();
+            this.colunaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCodBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,9 +79,10 @@
             // 
             // dtpAtual
             // 
+            this.dtpAtual.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpAtual.Location = new System.Drawing.Point(49, 78);
             this.dtpAtual.Name = "dtpAtual";
-            this.dtpAtual.Size = new System.Drawing.Size(221, 20);
+            this.dtpAtual.Size = new System.Drawing.Size(140, 20);
             this.dtpAtual.TabIndex = 103;
             // 
             // label3
@@ -109,7 +114,7 @@
             // 
             this.txtCPF.Location = new System.Drawing.Point(49, 28);
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(121, 20);
+            this.txtCPF.Size = new System.Drawing.Size(140, 20);
             this.txtCPF.TabIndex = 99;
             // 
             // label6
@@ -134,7 +139,7 @@
             // 
             // txtCodFun
             // 
-            this.txtCodFun.Location = new System.Drawing.Point(49, 16);
+            this.txtCodFun.Location = new System.Drawing.Point(54, 16);
             this.txtCodFun.Name = "txtCodFun";
             this.txtCodFun.Size = new System.Drawing.Size(100, 20);
             this.txtCodFun.TabIndex = 92;
@@ -142,7 +147,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 19);
+            this.label1.Location = new System.Drawing.Point(5, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 91;
@@ -163,9 +168,16 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colunaCodigo,
+            this.colunaCodBarras,
+            this.colunaDescricao,
+            this.colunaValor});
             this.dataGridView1.Location = new System.Drawing.Point(16, 61);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(608, 150);
             this.dataGridView1.TabIndex = 3;
             // 
@@ -278,6 +290,32 @@
             this.cbStatusPagamento.Size = new System.Drawing.Size(100, 21);
             this.cbStatusPagamento.TabIndex = 95;
             // 
+            // colunaCodigo
+            // 
+            this.colunaCodigo.HeaderText = "Codigo";
+            this.colunaCodigo.Name = "colunaCodigo";
+            this.colunaCodigo.ReadOnly = true;
+            // 
+            // colunaCodBarras
+            // 
+            this.colunaCodBarras.HeaderText = "Codigo de Barras";
+            this.colunaCodBarras.Name = "colunaCodBarras";
+            this.colunaCodBarras.ReadOnly = true;
+            this.colunaCodBarras.Width = 150;
+            // 
+            // colunaDescricao
+            // 
+            this.colunaDescricao.HeaderText = "Descricao";
+            this.colunaDescricao.Name = "colunaDescricao";
+            this.colunaDescricao.ReadOnly = true;
+            this.colunaDescricao.Width = 215;
+            // 
+            // colunaValor
+            // 
+            this.colunaValor.HeaderText = "Valor";
+            this.colunaValor.Name = "colunaValor";
+            this.colunaValor.ReadOnly = true;
+            // 
             // frmLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +333,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmLocacao";
             this.Text = "Locação";
             this.Load += new System.EventHandler(this.frmLocacao_Load);
@@ -336,5 +375,9 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbStatusPagamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCodBarras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaDescricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaValor;
     }
 }

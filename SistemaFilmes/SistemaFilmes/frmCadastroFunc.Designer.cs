@@ -451,6 +451,7 @@
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCadastroFunc";
             this.Text = "Cadastro de Funcionario";
             this.groupBox1.ResumeLayout(false);

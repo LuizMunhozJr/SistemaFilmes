@@ -31,12 +31,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarCodigoLocacao = new System.Windows.Forms.Button();
             this.btnAddItens = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnBuscarCodigoLocacao = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotalAPagar = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -82,31 +82,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ticket para Devolução Total ou Codigo de Barras";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(101, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Ticket: ";
-            // 
-            // btnBuscarCodigoLocacao
-            // 
-            this.btnBuscarCodigoLocacao.Location = new System.Drawing.Point(292, 20);
-            this.btnBuscarCodigoLocacao.Name = "btnBuscarCodigoLocacao";
-            this.btnBuscarCodigoLocacao.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarCodigoLocacao.TabIndex = 2;
-            this.btnBuscarCodigoLocacao.Text = "Buscar";
-            this.btnBuscarCodigoLocacao.UseVisualStyleBackColor = true;
-            // 
             // btnAddItens
             // 
             this.btnAddItens.Location = new System.Drawing.Point(292, 49);
@@ -131,6 +106,31 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(185, 20);
             this.textBox2.TabIndex = 3;
+            // 
+            // btnBuscarCodigoLocacao
+            // 
+            this.btnBuscarCodigoLocacao.Location = new System.Drawing.Point(292, 20);
+            this.btnBuscarCodigoLocacao.Name = "btnBuscarCodigoLocacao";
+            this.btnBuscarCodigoLocacao.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarCodigoLocacao.TabIndex = 2;
+            this.btnBuscarCodigoLocacao.Text = "Buscar";
+            this.btnBuscarCodigoLocacao.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(56, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Ticket: ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(101, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(185, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // label3
             // 
@@ -210,6 +210,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDevolucao";
             this.Text = "Devolução: ";
             this.groupBox1.ResumeLayout(false);
