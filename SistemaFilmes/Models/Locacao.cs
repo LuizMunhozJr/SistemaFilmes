@@ -13,5 +13,6 @@ namespace Models
         public int cdCli { get; set; }
         public DateTime dtRetirada { get; set; }
         public DateTime dtDevolucao { get; set; }
+        public bool situItem { get; set; }
     }
 }

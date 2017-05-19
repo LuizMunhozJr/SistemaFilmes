@@ -34,5 +34,15 @@ namespace SistemaFilmes
         {           
 
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Locacao loc = new Locacao();
+            locacaoDAL lDAL = new locacaoDAL();
+
+           loc = lDAL.SelecionarLocacaoPeloCodigo(Convert.ToInt32(txtCodLocacao.Text));
+            txtCodLocacao.Text = loc.cdLocacao.ToString();
+            cbStatusPagamento.SelectedIndex = Convert.ToInt32(loc.situItem);
+        }
     }
 }
