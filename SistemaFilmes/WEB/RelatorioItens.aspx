@@ -21,7 +21,6 @@
 <p>
     <asp:GridView ID="gvItens" runat="server" AutoGenerateColumns="False" Height="224px" Width="1041px">
         <Columns>
-            <asp:ButtonField DataTextField="Descricao" Text="Botão" />
             <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
             <asp:BoundField DataField="Ano" HeaderText="Ano de Lançamento" />
             <asp:TemplateField HeaderText="Imagem"> 

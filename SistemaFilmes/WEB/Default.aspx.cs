@@ -12,9 +12,12 @@ namespace WEB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            itemDAL iDAL = new itemDAL();
-            gvItens.DataSource =iDAL.Listar10UltimosItens();
-            gvItens.DataBind();
+            if (!Page.IsPostBack)
+            {
+                itemDAL iDAL = new itemDAL();
+                gvItens.DataSource = iDAL.Listar10UltimosItens();
+                gvItens.DataBind();
+            }
         }
     }
 }

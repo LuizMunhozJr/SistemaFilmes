@@ -9,7 +9,7 @@ using DAL;
 
 namespace WEB
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {

@@ -36,7 +36,7 @@ namespace DAL
                 string sql = "SELECT * FROM Usuarios WHERE NomeUsuario = @Usuario AND SenhaUs = @senha";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@Usuario", Usuario);
-                cmd.Parameters.AddWithValue("@SenhaUs", senha);
+                cmd.Parameters.AddWithValue("@senha", senha);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 

@@ -10,7 +10,7 @@
 namespace WEB {
     
     
-    public partial class Default {
+    public partial class Login {
         
         /// <summary>
         /// Login1 control.
