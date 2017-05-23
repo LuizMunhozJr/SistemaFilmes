@@ -14,7 +14,7 @@ namespace WEB
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
             usuarioDAL uDAL = new usuarioDAL();
-            e.Authenticated = uDAL.AutenticaUsuario(Login1.UserName, usuarioDAL.CalculaSHA1(Login1.Password));
+            e.Authenticated = uDAL.AutenticaUsuario(Login1.UserName, usuarioDAL.CalculaCriptografia(Login1.Password));
             
             if (e.Authenticated == true)
             {

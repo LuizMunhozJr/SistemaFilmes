@@ -12,20 +12,17 @@ namespace DAL
     {
         string connectionString = ConfigurationManager.ConnectionStrings["BDVideolandiaConnectionString"].ConnectionString;
 
-        public static string CalculaSHA1(string text)
+        public static string CalculaCriptografia(string text)
         {
-            try
-            {
-                byte[] buffer = Encoding.Default.GetBytes(text);
-                System.Security.Cryptography.SHA1CryptoServiceProvider cryptoTransformSHA1 = new System.Security.Cryptography.SHA1CryptoServiceProvider();
-                string hash = BitConverter.ToString(cryptoTransformSHA1.ComputeHash(buffer)).Replace("-", "");
-                return hash;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+        System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
+        byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(text);
+        byte[] hash = md5.ComputeHash(inputBytes);
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        for (int i = 0; i < hash.Length; i++)
+        {
+        sb.Append(hash[i].ToString("X2"));
+        }
+        return sb.ToString();
         }
         public bool  AutenticaUsuario(string Usuario, string senha)
         {
