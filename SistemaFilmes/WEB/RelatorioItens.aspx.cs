@@ -23,5 +23,12 @@ namespace WEB
             gvItens.DataSource = iDAL.ListarItens();
             gvItens.DataBind();
         }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            itemDAL iDAL = new itemDAL();
+            gvItens.DataSource=iDAL.BuscarItemFiltros(txtDesc.Text, txtAtor.Text, txtGenero.Text);
+            gvItens.DataBind();
+        }
     }
 }

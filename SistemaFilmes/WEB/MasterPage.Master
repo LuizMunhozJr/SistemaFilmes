@@ -49,6 +49,7 @@
                     <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Início" Value="Início">
                         <asp:MenuItem Text="Relatórios" Value="Relatórios">
                             <asp:MenuItem Text="Filmes e Séries" Value="Filmes e Series" NavigateUrl="~/RelatorioItens.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/DetalhesItem.aspx" Text="Detalhamento de Itens" Value="Detalhamento de Itens"></asp:MenuItem>
                         </asp:MenuItem>
                     </asp:MenuItem>
                 </Items>

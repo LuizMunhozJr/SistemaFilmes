@@ -143,7 +143,7 @@ namespace DAL
             }
 
             return G;
-        }
+        }        
 
         //DONE
         public void AlterarGenero(Genero objGenero)

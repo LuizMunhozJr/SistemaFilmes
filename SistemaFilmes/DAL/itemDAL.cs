@@ -272,11 +272,10 @@ namespace DAL
             return I;
         }
 
-
         //FINALIZANDO
-        public Item BuscarItemFiltros(string desc,string ator,string genero )
+        public List<Item> BuscarItemFiltros(string desc, string ator, string genero)
         {
-            Item I = null;
+            List<Item> lista = new List<Item>();
 
             SqlConnection conn = new SqlConnection(connectionString);
 
@@ -284,35 +283,36 @@ namespace DAL
             {
                 conn.Open();
 
-                string sql = @"select * from Itens as I inner join GenerosItem as GI on GI.cdItem = I.cdItem inner join Generos as G on G.cdGen = GI.cdGen 
-                WHERE I.dsItem LIKE '%@dsItem%' 
-                AND I.diretorItem LIKE '%@diretorItem 
-                AND G.nmGen LIKE '%@nmGen%' ";
+                string sql = @"select I.dsItem,I.anoItem,I.imgItem  from Itens as I 
+                            inner join GenerosItem as GI on GI.cdItem=I.cdItem
+                            inner join Generos as G on G.cdGen=GI.cdGen 
+                            inner join Participacoes as P on P.cdItem = I.cdItem
+                            inner join Artistas as Art on Art.cdArt = P.cdArt
+                            WHERE I.dsItem LIKE @descricao AND ART.nmArt LIKE @ator AND G.nmGen LIKE @genero";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@dsItem", desc);
-                cmd.Parameters.AddWithValue("@desc", ator);
-                cmd.Parameters.AddWithValue("@desc", desc);
+
+                cmd.Parameters.AddWithValue("@descricao", "%" + desc + "%");
+                cmd.Parameters.AddWithValue("@ator", "%" + ator + "%");
+                cmd.Parameters.AddWithValue("@genero", "%" + genero + "%");
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                if (dr.HasRows && dr.Read())
+                if (dr.HasRows)
                 {
-                    I = new Item();
-                    I.Codigo = Convert.ToInt32(dr["cdItem"]);
-                    I.CodigoDeBarras = dr["cdbarItem"].ToString();
-                    I.Descricao = dr["dsItem"].ToString();
-                    I.Ano = Convert.ToInt32(dr["dtCompra"]);
-                    I.Tipo = dr["tipoItem"].ToString();
-                    I.Preco = Convert.ToDecimal(dr["precoItem"]);
-                    I.VlCusto = Convert.ToDecimal(dr["vlcustoItem"]);
-                    I.DtCompra = Convert.ToDateTime(dr["dtCompra"]);
-                    I.Situacao = Convert.ToBoolean(dr["situItem"]);
-                    I.Diretor = dr["diretorItem"].ToString();
-                    I.Imagem = (byte[])dr["imgItem"];
+                    Item I = null;
+                    while (dr.Read())
+                    {
+                        I = new Item();
+                        I.Descricao = dr["dsItem"].ToString();
+                        I.Ano = Convert.ToInt32(dr["anoItem"]);
+                        I.Imagem = (byte[])dr["imgItem"];
+                        lista.Add(I);
+                    }
                 }
             }
             catch (Exception)
             {
+
                 throw;
             }
             finally
@@ -321,7 +321,103 @@ namespace DAL
                     conn.Close();
             }
 
-            return I;
+            return lista;
+        }
+
+        public List<Participacoes> ListarArtistasDeItem(Int32 cod)
+        {
+            List<Participacoes> Lista = new List<Participacoes>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string sql= @"Select * from Artistas as A 
+                            inner join Participacoes as P on P.cdArt = A.cdArt
+                            inner join Itens as I on i.cdItem = P.cdItem
+                            WHERE I.cdItem = @codItem ";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@codItem", cod);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    Participacoes P = null;
+                    while (dr.Read())
+                    {
+                        P = new Participacoes();
+                        P.cdArt = Convert.ToInt32(dr["cdArt"]);
+                        P.cdItem = cod;
+                        P.nmArt= dr["nmArt"].ToString();
+                        P.cdPersonagem = dr["cdPersonagem"].ToString();
+                        P.ImagemArt = (byte[])dr["imgArt"];
+
+                        Lista.Add(P);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return Lista;
+        }
+
+        public List<Genero> ListarGenerosDeItem(Int32 cod)
+        {
+            List<Genero> Lista = new List<Genero>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string sql = @"Select nmGen from Generos as G
+                               inner join GenerosItem as GI on GI.cdGen= G.cdGen
+                               inner join Itens as I on I.cdItem = GI.cdItem
+                               Where I.cdItem = @codItem";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@codItem", cod);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    Genero G = null;
+                    while (dr.Read())
+                    {
+                        G = new Genero();
+                        G.Nome= dr["nmGen"].ToString();
+
+                        Lista.Add(G);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return Lista;
         }
 
         public void AlteraItem(Item objItem)
