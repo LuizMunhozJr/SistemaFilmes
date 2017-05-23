@@ -36,6 +36,7 @@ namespace SistemaFilmes
             }
             pbItem.Image = null;
             pbItem.Refresh();
+            dgvGeneros.Rows.Clear();
 
         }
 
@@ -81,7 +82,14 @@ namespace SistemaFilmes
             {
                 Item objItem = SelectItem();
                 itemDAL iDAL = new itemDAL();
+                generoDAL gDAL = new generoDAL();
                 iDAL.InserirItem(objItem);
+
+                foreach (DataGridViewRow linha in dgvGeneros.Rows)
+                {
+                    gDAL.InserirGeneroItem(iDAL.BuscarCodUltimoItem(), Convert.ToInt32(linha.Cells[0].Value));
+                }
+
                 limparTela();
                 MessageBox.Show("Item inserido");
             }
@@ -137,6 +145,11 @@ namespace SistemaFilmes
             objGen.Nome = cbGeneros.Text;
 
             dgvGeneros.Rows.Add(objGen.Codigo,objGen.Nome);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limparTela();
         }
     }
 }

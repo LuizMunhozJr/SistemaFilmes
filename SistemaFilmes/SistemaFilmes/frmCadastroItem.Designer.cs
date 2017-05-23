@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pbItem = new System.Windows.Forms.PictureBox();
             this.cbGeneros = new System.Windows.Forms.ComboBox();
             this.btnInserirIMG = new System.Windows.Forms.Button();
             this.dtpCompra = new System.Windows.Forms.DateTimePicker();
@@ -56,6 +58,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvGeneros = new System.Windows.Forms.DataGridView();
+            this.colunaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
@@ -69,15 +73,11 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.colunaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pbItem = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItem)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneros)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbItem)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -115,6 +115,25 @@
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Item";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(497, 27);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 13);
+            this.label11.TabIndex = 127;
+            this.label11.Text = "Imagem";
+            // 
+            // pbItem
+            // 
+            this.pbItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbItem.Location = new System.Drawing.Point(500, 42);
+            this.pbItem.Name = "pbItem";
+            this.pbItem.Size = new System.Drawing.Size(130, 130);
+            this.pbItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbItem.TabIndex = 126;
+            this.pbItem.TabStop = false;
             // 
             // cbGeneros
             // 
@@ -161,7 +180,7 @@
             this.cbTipoItem.Name = "cbTipoItem";
             this.cbTipoItem.Size = new System.Drawing.Size(147, 21);
             this.cbTipoItem.TabIndex = 119;
-            this.cbTipoItem.Text = "Livre";
+            this.cbTipoItem.Text = "123";
             // 
             // txtPreco
             // 
@@ -169,7 +188,7 @@
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(121, 20);
             this.txtPreco.TabIndex = 118;
-            this.txtPreco.Text = " ";
+            this.txtPreco.Text = " 123";
             // 
             // txtAno
             // 
@@ -177,7 +196,7 @@
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(83, 20);
             this.txtAno.TabIndex = 117;
-            this.txtAno.Text = " ";
+            this.txtAno.Text = " 123";
             // 
             // btnAdicionarGen
             // 
@@ -204,7 +223,7 @@
             this.txtCodBar.Name = "txtCodBar";
             this.txtCodBar.Size = new System.Drawing.Size(83, 20);
             this.txtCodBar.TabIndex = 112;
-            this.txtCodBar.Text = " ";
+            this.txtCodBar.Text = " 123";
             // 
             // label7
             // 
@@ -239,12 +258,13 @@
             this.cbTipo.FormattingEnabled = true;
             this.cbTipo.Items.AddRange(new object[] {
             "DVD",
-            "BLU RAY"});
+            "BLU RAY",
+            "BLU RAY 3D"});
             this.cbTipo.Location = new System.Drawing.Point(144, 139);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(147, 21);
             this.cbTipo.TabIndex = 107;
-            this.cbTipo.Text = " ";
+            this.cbTipo.Text = "123";
             // 
             // txtDiretor
             // 
@@ -252,7 +272,7 @@
             this.txtDiretor.Name = "txtDiretor";
             this.txtDiretor.Size = new System.Drawing.Size(259, 20);
             this.txtDiretor.TabIndex = 99;
-            this.txtDiretor.Text = " ";
+            this.txtDiretor.Text = " 123";
             // 
             // label10
             // 
@@ -269,7 +289,7 @@
             this.txtVlCusto.Name = "txtVlCusto";
             this.txtVlCusto.Size = new System.Drawing.Size(121, 20);
             this.txtVlCusto.TabIndex = 97;
-            this.txtVlCusto.Text = " ";
+            this.txtVlCusto.Text = " 123";
             // 
             // label6
             // 
@@ -313,7 +333,7 @@
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(259, 20);
             this.txtDescricao.TabIndex = 90;
-            this.txtDescricao.Text = " ";
+            this.txtDescricao.Text = " 123";
             // 
             // label2
             // 
@@ -366,6 +386,20 @@
             this.dgvGeneros.ReadOnly = true;
             this.dgvGeneros.Size = new System.Drawing.Size(393, 82);
             this.dgvGeneros.TabIndex = 0;
+            // 
+            // colunaCodigo
+            // 
+            this.colunaCodigo.HeaderText = "Codigo";
+            this.colunaCodigo.Name = "colunaCodigo";
+            this.colunaCodigo.ReadOnly = true;
+            this.colunaCodigo.Width = 150;
+            // 
+            // colunaNome
+            // 
+            this.colunaNome.HeaderText = "Nome";
+            this.colunaNome.Name = "colunaNome";
+            this.colunaNome.ReadOnly = true;
+            this.colunaNome.Width = 200;
             // 
             // groupBox3
             // 
@@ -469,6 +503,7 @@
             this.btnCancelar.TabIndex = 50;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAlterar
             // 
@@ -490,39 +525,6 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // colunaCodigo
-            // 
-            this.colunaCodigo.HeaderText = "Codigo";
-            this.colunaCodigo.Name = "colunaCodigo";
-            this.colunaCodigo.ReadOnly = true;
-            this.colunaCodigo.Width = 150;
-            // 
-            // colunaNome
-            // 
-            this.colunaNome.HeaderText = "Nome";
-            this.colunaNome.Name = "colunaNome";
-            this.colunaNome.ReadOnly = true;
-            this.colunaNome.Width = 200;
-            // 
-            // pbItem
-            // 
-            this.pbItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbItem.Location = new System.Drawing.Point(500, 42);
-            this.pbItem.Name = "pbItem";
-            this.pbItem.Size = new System.Drawing.Size(130, 130);
-            this.pbItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbItem.TabIndex = 126;
-            this.pbItem.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(497, 27);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 13);
-            this.label11.TabIndex = 127;
-            this.label11.Text = "Imagem";
-            // 
             // frmCadastroItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -541,11 +543,11 @@
             this.Load += new System.EventHandler(this.frmCadastroItem_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItem)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneros)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbItem)).EndInit();
             this.ResumeLayout(false);
 
         }

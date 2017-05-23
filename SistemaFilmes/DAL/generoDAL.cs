@@ -39,7 +39,34 @@ namespace DAL
                     conn.Close();
             }
         }
-        
+        public void InserirGeneroItem(int codItem,int CodGen)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string sql = "INSERT INTO GenerosItem VALUES (@cditem,@cdGen)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@cditem", codItem);
+                cmd.Parameters.AddWithValue("@cdGen", CodGen);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+
         public List<Genero> ListarGeneros()
         {
             List<Genero> lista = new List<Genero>();

@@ -102,7 +102,57 @@ namespace DAL
             return lista;
         }
 
-        
+        public List<Item> Listar10UltimosItens()
+        {
+            List<Item> lista = new List<Item>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string sql = "SELECT TOP 10 * FROM Itens ORDER BY cdItem DESC";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    Item I = null;
+                    while (dr.Read())
+                    {
+                        I = new Item();
+                        I.Codigo = Convert.ToInt32(dr["cdItem"]);
+                        I.CodigoDeBarras = dr["cdbarItem"].ToString();
+                        I.Descricao = dr["dsItem"].ToString();
+                        I.Ano = Convert.ToInt32(dr["anoItem"]);
+                        I.Tipo = dr["tipoItem"].ToString();
+                        I.Preco = Convert.ToDecimal(dr["precoItem"]);
+                        I.VlCusto = Convert.ToDecimal(dr["vlcustoItem"]);
+                        I.DtCompra = Convert.ToDateTime(dr["dtCompra"]);
+                        I.Situacao = Convert.ToBoolean(dr["situItem"]);
+                        I.Diretor = dr["diretorItem"].ToString();
+                        I.Imagem = (byte[])dr["imgItem"];
+
+                        lista.Add(I);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return lista;
+        }
+
         public Item BuscarItemCodigo(int cod)
         {
             Item I = null;
@@ -132,7 +182,7 @@ namespace DAL
                     I.DtCompra = Convert.ToDateTime(dr["dtCompra"]);
                     I.Situacao = Convert.ToBoolean(dr["situItem"]);
                     I.Diretor = dr["diretorItem"].ToString();
-                    I.Imagem = (byte[])dr["imgItem"];                    
+                    I.Imagem = (byte[])dr["imgItem"];
                 }
             }
             catch (Exception)
@@ -146,6 +196,36 @@ namespace DAL
             }
 
             return I;
+        }
+
+        public int BuscarCodUltimoItem()
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            int codigo=0;
+            try
+            {
+                conn.Open();
+
+                string sql = "select top 1 cdItem from itens order by cdItem desc";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                
+                if (dr.HasRows && dr.Read())
+                {
+                   codigo = Convert.ToInt32(dr["cdItem"]);                                       
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return codigo;
         }
         public Item BuscarItemCodigoBarras(int cod)
         {
@@ -192,7 +272,58 @@ namespace DAL
             return I;
         }
 
-        
+
+        //FINALIZANDO
+        public Item BuscarItemFiltros(string desc,string ator,string genero )
+        {
+            Item I = null;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string sql = @"select * from Itens as I inner join GenerosItem as GI on GI.cdItem = I.cdItem inner join Generos as G on G.cdGen = GI.cdGen 
+                WHERE I.dsItem LIKE '%@dsItem%' 
+                AND I.diretorItem LIKE '%@diretorItem 
+                AND G.nmGen LIKE '%@nmGen%' ";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@dsItem", desc);
+                cmd.Parameters.AddWithValue("@desc", ator);
+                cmd.Parameters.AddWithValue("@desc", desc);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows && dr.Read())
+                {
+                    I = new Item();
+                    I.Codigo = Convert.ToInt32(dr["cdItem"]);
+                    I.CodigoDeBarras = dr["cdbarItem"].ToString();
+                    I.Descricao = dr["dsItem"].ToString();
+                    I.Ano = Convert.ToInt32(dr["dtCompra"]);
+                    I.Tipo = dr["tipoItem"].ToString();
+                    I.Preco = Convert.ToDecimal(dr["precoItem"]);
+                    I.VlCusto = Convert.ToDecimal(dr["vlcustoItem"]);
+                    I.DtCompra = Convert.ToDateTime(dr["dtCompra"]);
+                    I.Situacao = Convert.ToBoolean(dr["situItem"]);
+                    I.Diretor = dr["diretorItem"].ToString();
+                    I.Imagem = (byte[])dr["imgItem"];
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return I;
+        }
+
         public void AlteraItem(Item objItem)
         {
             SqlConnection conn = new SqlConnection(connectionString);

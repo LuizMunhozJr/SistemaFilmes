@@ -19,9 +19,17 @@ namespace SistemaFilmes
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private Artista SelectArtista()
         {
+            var ms = new MemoryStream();
+            Artista Art = new Artista();
+            Art.Nome = txtNomeArt.Text;
+            Art.DtNascto = Convert.ToDateTime(dtpNactoArtista.Text);
+            Art.Naturalidade = txtPaisArt.Text;
+            pbArtista.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            Art.Imagem = ms.ToArray();
 
+            return Art;
         }
 
         private void btnInserirImagem_Click(object sender, EventArgs e)
@@ -56,18 +64,18 @@ namespace SistemaFilmes
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            var ms = new MemoryStream();
+            
             artistaDAL aDAL = new artistaDAL();
-            Artista Art = new Artista();
-            Art.Nome = txtNomeArt.Text;
-            Art.DtNascto = Convert.ToDateTime(dtpNactoArtista.Text);
-            Art.Naturalidade = txtPaisArt.Text;
-            pbArtista.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            Art.Imagem = ms.ToArray();
-            aDAL.InserirArtista(Art);
-            MessageBox.Show("Inserido com Sucesso!");
-            LimpaTelaArtista();
 
+            if (pbArtista.Image != null)
+            {
+                Artista objArtista = SelectArtista();
+                aDAL.InserirArtista(objArtista);
+                MessageBox.Show("Inserido com Sucesso!");
+                LimpaTelaArtista();
+            }
+            else
+                MessageBox.Show("Imagem Requerida");
 
 
         }

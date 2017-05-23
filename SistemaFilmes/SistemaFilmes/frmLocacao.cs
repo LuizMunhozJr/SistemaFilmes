@@ -17,6 +17,22 @@ namespace SistemaFilmes
         {
             InitializeComponent();
         }
+        private void LimparTela()
+        {
+            foreach (var gpBox in this.Controls.OfType<GroupBox>())
+            {
+                foreach (var txtBox in gpBox.Controls.OfType<TextBox>())
+                {
+                    txtBox.Text =string.Empty;
+                }
+            }
+
+            txtCodLocacao.Text = null;
+            cbStatusPagamento.Text = null;
+            cbFuncionarios.Text = null;
+            dgvItens.Rows.Clear();
+            
+        }
 
         private void CBcarregarItens()
         {
@@ -25,9 +41,18 @@ namespace SistemaFilmes
             cbItens.DisplayMember = "Descricao";
             cbItens.ValueMember ="Codigo";
         }
+
+        private void CBcarregarFuncionarios()
+        {
+            funcionarioDAL fDAL = new funcionarioDAL();
+            cbFuncionarios.DataSource = fDAL.ListarFuncionarios();
+            cbFuncionarios.DisplayMember = "Nome";
+            cbFuncionarios.ValueMember = "Codigo"; 
+        }
         private void frmLocacao_Load(object sender, EventArgs e)
         {
             CBcarregarItens();
+            CBcarregarFuncionarios();
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -43,6 +68,22 @@ namespace SistemaFilmes
            loc = lDAL.SelecionarLocacaoPeloCodigo(Convert.ToInt32(txtCodLocacao.Text));
             txtCodLocacao.Text = loc.cdLocacao.ToString();
             cbStatusPagamento.SelectedIndex = Convert.ToInt32(loc.situItem);
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            itemDAL iDAL = new itemDAL();
+            Item objItem = new Item();
+
+            objItem = iDAL.BuscarItemCodigo(Convert.ToInt32(cbItens.SelectedValue));
+
+            dgvItens.Rows.Add(objItem.Codigo, objItem.CodigoDeBarras, objItem.Descricao, objItem.Preco);
+            
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimparTela();
         }
     }
 }

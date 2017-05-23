@@ -37,7 +37,9 @@ namespace SistemaFilmes
         public Funcionario SelecFunc()
         {
             Funcionario objfunc = new Funcionario();
-            objfunc.Codigo = Convert.ToInt32(txtCodFunc.Text);
+
+            if(txtCod.Text!=string.Empty)
+            objfunc.Codigo = Convert.ToInt32(txtCod.Text);
             objfunc.CEL = txtCel.Text;
             objfunc.CEP = txtCEP.Text;
             objfunc.Cidade = txtCidade.Text;
@@ -68,7 +70,7 @@ namespace SistemaFilmes
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             funcionarioDAL funcDAL = new funcionarioDAL();
-            Funcionario objfunc = funcDAL.BuscarFuncionario(Convert.ToInt32(txtCodFunc.Text));
+            Funcionario objfunc = funcDAL.BuscarFuncionario(Convert.ToInt32(txtCod.Text));
 
             //LimparTela();
             if (objfunc == null)
@@ -109,7 +111,7 @@ namespace SistemaFilmes
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             funcionarioDAL funcDAL = new funcionarioDAL();
-            funcDAL.ExcluirFuncionario(Convert.ToInt32(txtCodFunc.Text));
+            funcDAL.ExcluirFuncionario(Convert.ToInt32(txtCod.Text));
             LimparTela();
         }
     }

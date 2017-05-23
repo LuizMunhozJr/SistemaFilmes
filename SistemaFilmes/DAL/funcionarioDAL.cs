@@ -76,7 +76,7 @@ namespace DAL
                     while (dr.Read())
                     {
                         f = new Funcionario();
-                        f.Codigo = Convert.ToInt32(dr["CdFuncionario"]);
+                        f.Codigo = Convert.ToInt32(dr["CdFunc"]);
                         f.Nome = dr["nmFunc"].ToString();
                         f.DtNascto = Convert.ToDateTime(dr["dtFunc"]);
                         f.Sexo = dr["sxFunc"].ToString();
