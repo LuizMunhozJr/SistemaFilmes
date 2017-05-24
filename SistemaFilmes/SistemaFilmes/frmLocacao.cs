@@ -8,11 +8,14 @@ using System.Text;
 using System.Windows.Forms;
 using DAL;
 using Models;
+using System.Data.SqlClient;
 
 namespace SistemaFilmes
 {
     public partial class frmLocacao : Form
     {
+        clienteDAL cDAL = new clienteDAL();
+        Cliente Cli = new Cliente();
         public frmLocacao()
         {
             InitializeComponent();
@@ -23,15 +26,14 @@ namespace SistemaFilmes
             {
                 foreach (var txtBox in gpBox.Controls.OfType<TextBox>())
                 {
-                    txtBox.Text =string.Empty;
+                    txtBox.Text = string.Empty;
                 }
             }
 
             txtCodLocacao.Text = null;
-            cbStatusPagamento.Text = null;
             cbFuncionarios.Text = null;
             dgvItens.Rows.Clear();
-            
+
         }
 
         private void CBcarregarItens()
@@ -39,7 +41,7 @@ namespace SistemaFilmes
             itemDAL iDAL = new itemDAL();
             cbItens.DataSource = iDAL.ListarItens();
             cbItens.DisplayMember = "Descricao";
-            cbItens.ValueMember ="Codigo";
+            cbItens.ValueMember = "Codigo";
         }
 
         private void CBcarregarFuncionarios()
@@ -47,16 +49,32 @@ namespace SistemaFilmes
             funcionarioDAL fDAL = new funcionarioDAL();
             cbFuncionarios.DataSource = fDAL.ListarFuncionarios();
             cbFuncionarios.DisplayMember = "Nome";
-            cbFuncionarios.ValueMember = "Codigo"; 
+            cbFuncionarios.ValueMember = "Codigo";
         }
         private void frmLocacao_Load(object sender, EventArgs e)
         {
             CBcarregarItens();
             CBcarregarFuncionarios();
+            dtpAtual.Text = DateTime.Now.ToString(); ;
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
-        {           
+        {
+            Locacao loc = new Locacao();
+            ItemLocacao Iloc = new ItemLocacao();
+            locacaoDAL lDAL = new locacaoDAL();
+            loc.cdCli = Cli.Codigo;
+            loc.cdFunc = cbFuncionarios.SelectedIndex;
+            loc.dtRetirada = Convert.ToDateTime(dtpAtual.Text);
+            lDAL.InserirLocacao(loc);
+            Iloc.cdLocacao = lDAL.BuscarCodUltimaLocacao();
+            for (int i=0; i <= dgvItens.TabIndex; i++)
+            {
+                Iloc.cdItem = (int)dgvItens.Rows[i].Cells[0].Value;
+                Iloc.dtDevolucao = Convert.ToDateTime(dtpAtual.Text).AddDays(5);
+                Iloc.statusPG = "Em Aberto";
+                lDAL.InserirItensLocacao(Iloc);
+            }
 
         }
 
@@ -65,9 +83,8 @@ namespace SistemaFilmes
             Locacao loc = new Locacao();
             locacaoDAL lDAL = new locacaoDAL();
 
-           loc = lDAL.SelecionarLocacaoPeloCodigo(Convert.ToInt32(txtCodLocacao.Text));
+            loc = lDAL.SelecionarLocacaoPeloCodigo(Convert.ToInt32(txtCodLocacao.Text));
             txtCodLocacao.Text = loc.cdLocacao.ToString();
-            cbStatusPagamento.SelectedIndex = Convert.ToInt32(loc.situItem);
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
@@ -76,14 +93,22 @@ namespace SistemaFilmes
             Item objItem = new Item();
 
             objItem = iDAL.BuscarItemCodigo(Convert.ToInt32(cbItens.SelectedValue));
-
             dgvItens.Rows.Add(objItem.Codigo, objItem.CodigoDeBarras, objItem.Descricao, objItem.Preco);
-            
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimparTela();
+        }
+
+        private void btnBuscarCli_Click(object sender, EventArgs e)
+        {
+
+            Cli = cDAL.BuscarClienteCPF(txtCPF.Text);
+            txtCPF.Text = Cli.CPF.ToString();
+            txtNome.Text = Cli.Nome.ToString();
+
         }
     }
 }

@@ -5,11 +5,12 @@ using System.Text;
 
 namespace Models
 {
-    public class Locacao
+    public class ItemLocacao
     {
         public int cdLocacao { get; set; }
-        public int cdFunc { get; set; }
-        public int cdCli { get; set; }
-        public DateTime dtRetirada { get; set; }
+        public int cdItem { get; set; }
+        public string statusPG { get; set; }
+        public DateTime dtDevolucao { get; set; }
+
     }
 }
