@@ -31,15 +31,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pbItem = new System.Windows.Forms.PictureBox();
-            this.cbGeneros = new System.Windows.Forms.ComboBox();
             this.btnInserirIMG = new System.Windows.Forms.Button();
             this.dtpCompra = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.cbTipoItem = new System.Windows.Forms.ComboBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.txtAno = new System.Windows.Forms.TextBox();
-            this.btnAdicionarGen = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtCodBar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -56,6 +53,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbGeneros = new System.Windows.Forms.ComboBox();
+            this.btnAdicionarGen = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvGeneros = new System.Windows.Forms.DataGridView();
             this.colunaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,11 +74,22 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dgvParticipacoes = new System.Windows.Forms.DataGridView();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cbArtistas = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtPersonagem = new System.Windows.Forms.TextBox();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.cdArt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nmArt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdPersonagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbItem)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneros)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParticipacoes)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -132,14 +143,6 @@
             this.pbItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbItem.TabIndex = 126;
             this.pbItem.TabStop = false;
-            // 
-            // cbGeneros
-            // 
-            this.cbGeneros.FormattingEnabled = true;
-            this.cbGeneros.Location = new System.Drawing.Point(73, 24);
-            this.cbGeneros.Name = "cbGeneros";
-            this.cbGeneros.Size = new System.Drawing.Size(147, 21);
-            this.cbGeneros.TabIndex = 125;
             // 
             // btnInserirIMG
             // 
@@ -195,25 +198,6 @@
             this.txtAno.Size = new System.Drawing.Size(83, 20);
             this.txtAno.TabIndex = 117;
             this.txtAno.Text = " 123";
-            // 
-            // btnAdicionarGen
-            // 
-            this.btnAdicionarGen.Location = new System.Drawing.Point(236, 22);
-            this.btnAdicionarGen.Name = "btnAdicionarGen";
-            this.btnAdicionarGen.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionarGen.TabIndex = 116;
-            this.btnAdicionarGen.Text = "Adicionar";
-            this.btnAdicionarGen.UseVisualStyleBackColor = true;
-            this.btnAdicionarGen.Click += new System.EventHandler(this.btnAdicionarGen_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 27);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 13);
-            this.label8.TabIndex = 113;
-            this.label8.Text = "Gênero: ";
             // 
             // txtCodBar
             // 
@@ -358,6 +342,33 @@
             this.label1.TabIndex = 87;
             this.label1.Text = "Código: ";
             // 
+            // cbGeneros
+            // 
+            this.cbGeneros.FormattingEnabled = true;
+            this.cbGeneros.Location = new System.Drawing.Point(73, 24);
+            this.cbGeneros.Name = "cbGeneros";
+            this.cbGeneros.Size = new System.Drawing.Size(147, 21);
+            this.cbGeneros.TabIndex = 125;
+            // 
+            // btnAdicionarGen
+            // 
+            this.btnAdicionarGen.Location = new System.Drawing.Point(236, 22);
+            this.btnAdicionarGen.Name = "btnAdicionarGen";
+            this.btnAdicionarGen.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionarGen.TabIndex = 116;
+            this.btnAdicionarGen.Text = "Adicionar";
+            this.btnAdicionarGen.UseVisualStyleBackColor = true;
+            this.btnAdicionarGen.Click += new System.EventHandler(this.btnAdicionarGen_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 113;
+            this.label8.Text = "Gênero: ";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvGeneros);
@@ -382,7 +393,7 @@
             this.colunaCodigo,
             this.colunaNome});
             this.dgvGeneros.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvGeneros.Location = new System.Drawing.Point(25, 51);
+            this.dgvGeneros.Location = new System.Drawing.Point(27, 52);
             this.dgvGeneros.Name = "dgvGeneros";
             this.dgvGeneros.ReadOnly = true;
             this.dgvGeneros.Size = new System.Drawing.Size(393, 225);
@@ -528,12 +539,96 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnAdicionar);
+            this.groupBox4.Controls.Add(this.txtPersonagem);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.cbArtistas);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.dgvParticipacoes);
             this.groupBox4.Location = new System.Drawing.Point(12, 323);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(596, 214);
             this.groupBox4.TabIndex = 51;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Participaçoes";
+            // 
+            // dgvParticipacoes
+            // 
+            this.dgvParticipacoes.AllowUserToAddRows = false;
+            this.dgvParticipacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvParticipacoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cdArt,
+            this.nmArt,
+            this.cdPersonagem});
+            this.dgvParticipacoes.Location = new System.Drawing.Point(11, 62);
+            this.dgvParticipacoes.Name = "dgvParticipacoes";
+            this.dgvParticipacoes.ReadOnly = true;
+            this.dgvParticipacoes.Size = new System.Drawing.Size(573, 141);
+            this.dgvParticipacoes.TabIndex = 0;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(10, 32);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Artista:";
+            // 
+            // cbArtistas
+            // 
+            this.cbArtistas.FormattingEnabled = true;
+            this.cbArtistas.Location = new System.Drawing.Point(50, 28);
+            this.cbArtistas.Name = "cbArtistas";
+            this.cbArtistas.Size = new System.Drawing.Size(131, 21);
+            this.cbArtistas.TabIndex = 3;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(192, 32);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(115, 13);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Nome do Personagem:";
+            // 
+            // txtPersonagem
+            // 
+            this.txtPersonagem.Location = new System.Drawing.Point(309, 29);
+            this.txtPersonagem.Name = "txtPersonagem";
+            this.txtPersonagem.Size = new System.Drawing.Size(181, 20);
+            this.txtPersonagem.TabIndex = 5;
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Location = new System.Drawing.Point(511, 28);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(67, 23);
+            this.btnAdicionar.TabIndex = 6;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            // 
+            // cdArt
+            // 
+            this.cdArt.HeaderText = "Codigo";
+            this.cdArt.Name = "cdArt";
+            this.cdArt.ReadOnly = true;
+            this.cdArt.Width = 150;
+            // 
+            // nmArt
+            // 
+            this.nmArt.HeaderText = "Artista";
+            this.nmArt.Name = "nmArt";
+            this.nmArt.ReadOnly = true;
+            this.nmArt.Width = 180;
+            // 
+            // cdPersonagem
+            // 
+            this.cdPersonagem.HeaderText = "Personagem";
+            this.cdPersonagem.Name = "cdPersonagem";
+            this.cdPersonagem.ReadOnly = true;
+            this.cdPersonagem.Width = 200;
             // 
             // frmCadastroItem
             // 
@@ -560,6 +655,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneros)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParticipacoes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -612,5 +710,14 @@
         private System.Windows.Forms.PictureBox pbItem;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.TextBox txtPersonagem;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox cbArtistas;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DataGridView dgvParticipacoes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cdArt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nmArt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cdPersonagem;
     }
 }

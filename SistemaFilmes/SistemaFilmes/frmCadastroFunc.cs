@@ -64,7 +64,9 @@ namespace SistemaFilmes
             Funcionario objfunc = SelecFunc();         
             funcionarioDAL FuncDAL = new funcionarioDAL();
 
-            FuncDAL.InserirFuncionario(objfunc);
+            FuncDAL.InserirFuncionario(objfunc);            
+            LimparTela();
+            MessageBox.Show("Funcionario Cadastrado !");
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

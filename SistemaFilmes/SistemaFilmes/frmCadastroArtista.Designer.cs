@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pbArtista = new System.Windows.Forms.PictureBox();
             this.btnInserirImagem = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtPaisArt = new System.Windows.Forms.TextBox();
@@ -45,12 +47,10 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.pbArtista = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArtista)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensArtista)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbArtista)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -73,6 +73,25 @@
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Artista";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(523, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.TabIndex = 124;
+            this.label4.Text = "Imagem";
+            // 
+            // pbArtista
+            // 
+            this.pbArtista.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbArtista.Location = new System.Drawing.Point(526, 31);
+            this.pbArtista.Name = "pbArtista";
+            this.pbArtista.Size = new System.Drawing.Size(130, 130);
+            this.pbArtista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbArtista.TabIndex = 123;
+            this.pbArtista.TabStop = false;
             // 
             // btnInserirImagem
             // 
@@ -216,25 +235,6 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // pbArtista
-            // 
-            this.pbArtista.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbArtista.Location = new System.Drawing.Point(526, 31);
-            this.pbArtista.Name = "pbArtista";
-            this.pbArtista.Size = new System.Drawing.Size(130, 130);
-            this.pbArtista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbArtista.TabIndex = 123;
-            this.pbArtista.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(523, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 124;
-            this.label4.Text = "Imagem";
-            // 
             // frmCadastroArtista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,11 +249,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCadastroArtista";
             this.Text = "Cadastro de Artistas";
+            this.Load += new System.EventHandler(this.frmCadastroArtista_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArtista)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensArtista)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbArtista)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -82,13 +82,19 @@ namespace SistemaFilmes
             {
                 Item objItem = SelectItem();
                 itemDAL iDAL = new itemDAL();
-                generoDAL gDAL = new generoDAL();
+                generoDAL gDAL = new generoDAL();                
                 iDAL.InserirItem(objItem);
 
                 foreach (DataGridViewRow linha in dgvGeneros.Rows)
                 {
                     gDAL.InserirGeneroItem(iDAL.BuscarCodUltimoItem(), Convert.ToInt32(linha.Cells[0].Value));
                 }
+
+                foreach (DataGridViewRow linha in dgvParticipacoes.Rows)
+                {
+                    iDAL.InserirParticipacao(iDAL.BuscarCodUltimoItem(), Convert.ToInt32(linha.Cells[0].Value),linha.Cells[2].Value.ToString());
+                }
+
 
                 limparTela();
                 MessageBox.Show("Item inserido");
@@ -131,11 +137,17 @@ namespace SistemaFilmes
         }
 
         private void frmCadastroItem_Load(object sender, EventArgs e)
-        {
+        {            
             generoDAL gDAL = new generoDAL();;
             cbGeneros.DataSource = gDAL.ListarGeneros();
             cbGeneros.DisplayMember = "Nome";
-            cbGeneros.ValueMember = "Codigo";       
+            cbGeneros.ValueMember = "Codigo";
+
+            artistaDAL aDAL = new artistaDAL();
+            cbArtistas.DataSource = aDAL.ListarArtistas();
+            cbArtistas.DisplayMember = "Nome";
+            cbArtistas.ValueMember = "Codigo";
+
         }
 
         private void btnAdicionarGen_Click(object sender, EventArgs e)
@@ -150,6 +162,11 @@ namespace SistemaFilmes
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             limparTela();
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            dgvParticipacoes.Rows.Add(cbArtistas.SelectedValue, cbArtistas.Text, txtPersonagem.Text);
         }
     }
 }

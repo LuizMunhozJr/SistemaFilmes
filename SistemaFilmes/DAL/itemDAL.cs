@@ -51,6 +51,36 @@ namespace DAL
             }
         }
 
+        public void InserirParticipacao(int codItem,int codArt,string Perso)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string sql = "INSERT INTO Participacoes VALUES (@cdItem,@cdArt,@dsPerso)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@cdItem", codItem);
+                cmd.Parameters.AddWithValue("@cdArt", codArt);
+                cmd.Parameters.AddWithValue("@dsPerso", Perso);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+        
+
         public List<Item> ListarItens()
         {
             List<Item> lista = new List<Item>();

@@ -49,17 +49,19 @@ namespace SistemaFilmes
 
             Art =  aDAL.BuscarArtista(Convert.ToInt32(txtCodArt.Text));
 
-            txtCodArt.Text = Art.Codigo.ToString();
-            txtNomeArt.Text = Art.Nome.ToString();
-            dtpNactoArtista.Text = Art.DtNascto.ToString();
-            txtPaisArt.Text = Art.Naturalidade.ToString();
-            pbArtista.Image = Image.FromStream(new MemoryStream (Art.Imagem));
-            pbArtista.Refresh();
-            dgvItensArtista.DataSource = aDAL.SelecionarItensDoArtista(Art.Codigo);
-            
-           
-
-
+            if (Art != null)
+            {
+                txtCodArt.Text = Art.Codigo.ToString();
+                txtNomeArt.Text = Art.Nome.ToString();
+                dtpNactoArtista.Text = Art.DtNascto.ToString();
+                txtPaisArt.Text = Art.Naturalidade.ToString();
+                pbArtista.Image = Image.FromStream(new MemoryStream(Art.Imagem));
+                pbArtista.Refresh();
+               // dgvItensArtista.DataSource = aDAL.SelecionarItensDoArtista(Art.Codigo);
+                dgvItensArtista.DataSource = aDAL.ListarParticipacoes(Convert.ToInt32(txtCodArt.Text));
+            }
+            else
+                MessageBox.Show("Artista Não Encontrado");
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -108,6 +110,11 @@ namespace SistemaFilmes
             dtpNactoArtista.Text = string.Empty;
             pbArtista.Image = null;
             dgvItensArtista = null;
+        }
+
+        private void frmCadastroArtista_Load(object sender, EventArgs e)
+        {
+            artistaDAL aDAL = new artistaDAL();            
         }
     }
 

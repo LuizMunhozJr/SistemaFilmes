@@ -91,7 +91,52 @@ namespace DAL
                 return lista;
             }
 
-            
+            public List<Participacoes> ListarParticipacoes(int codArt)
+        {
+            List<Participacoes> lista = new List<Participacoes>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string sql= @"select P.cdPersonagem as Personagem,dsItem as Item from Participacoes as P
+                            inner join  Itens as I on I.cdItem = P.cdItem
+                            Where P.cdArt =@cod";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@cod", codArt);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    Participacoes P = null;
+                    while (dr.Read())
+                    {
+                        P = new Participacoes();
+                        P.cdPersonagem = dr["Personagem"].ToString();
+                        P.nmItem = dr["Item"].ToString();
+
+                        lista.Add(P);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return lista;
+        }
+
             public Artista BuscarArtista(int cod)
             {
                 Artista a = null;
@@ -186,7 +231,7 @@ namespace DAL
                         conn.Close();
                 }
             }
-        public List<Item> SelecionarItensDoArtista(int codigo)
+            public List<Item> SelecionarItensDoArtista(int codigo)
         {
             List<Item> lista = new List<Item>();
 
