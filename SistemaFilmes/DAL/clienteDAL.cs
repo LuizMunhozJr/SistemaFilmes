@@ -158,6 +158,53 @@ namespace DAL
 
             return C;
         }
+        public Cliente BuscarClienteCPF(string cpf)
+        {
+            Cliente C = null;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string sql = "SELECT * FROM clientes WHERE cpfCli = @CPF";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@CPF", cpf);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows && dr.Read())
+                {
+                    C = new Cliente();
+                    C.CEL = dr["celCli"].ToString();
+                    C.CEP = dr["cepCli"].ToString();
+                    C.Cidade = dr["cidCli"].ToString();
+                    C.CPF = dr["cpfCli"].ToString();
+                    C.DtNascto = Convert.ToDateTime(dr["dtCli"].ToString());
+                    C.Email = dr["emailCli"].ToString();
+                    C.Endereco = dr["endCli"].ToString();
+                    C.EstadoCivil = dr["ecCli"].ToString();
+                    C.Nome = dr["nmCli"].ToString();
+                    C.RG = dr["rgCli"].ToString();
+                    C.Sexo = dr["sxCli"].ToString();
+                    C.Status = Convert.ToBoolean(dr["stsCli"].ToString());
+                    C.TEL = dr["telCli"].ToString();
+                    C.UF = dr["ufCli"].ToString();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return C;
+        }
 
         //DONE
         public void AlterarCliente(Cliente objcliente)

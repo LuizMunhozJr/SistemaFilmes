@@ -51,10 +51,9 @@
             this.txtCodLocacao = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbStatusPagamento = new System.Windows.Forms.ComboBox();
             this.cbFuncionarios = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscarCli = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -62,6 +61,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBuscarCli);
             this.groupBox1.Controls.Add(this.dtpAtual);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNome);
@@ -269,30 +269,10 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(63, 50);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 96;
-            this.label7.Text = "Status:";
-            // 
-            // cbStatusPagamento
-            // 
-            this.cbStatusPagamento.FormattingEnabled = true;
-            this.cbStatusPagamento.Items.AddRange(new object[] {
-            "PAGO",
-            "NÃO PAGO"});
-            this.cbStatusPagamento.Location = new System.Drawing.Point(107, 46);
-            this.cbStatusPagamento.Name = "cbStatusPagamento";
-            this.cbStatusPagamento.Size = new System.Drawing.Size(129, 21);
-            this.cbStatusPagamento.TabIndex = 95;
-            // 
             // cbFuncionarios
             // 
             this.cbFuncionarios.FormattingEnabled = true;
-            this.cbFuncionarios.Location = new System.Drawing.Point(107, 79);
+            this.cbFuncionarios.Location = new System.Drawing.Point(107, 42);
             this.cbFuncionarios.Name = "cbFuncionarios";
             this.cbFuncionarios.Size = new System.Drawing.Size(129, 21);
             this.cbFuncionarios.TabIndex = 98;
@@ -300,11 +280,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 82);
+            this.label1.Location = new System.Drawing.Point(38, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 97;
             this.label1.Text = "Funcionario:";
+            // 
+            // btnBuscarCli
+            // 
+            this.btnBuscarCli.Location = new System.Drawing.Point(195, 26);
+            this.btnBuscarCli.Name = "btnBuscarCli";
+            this.btnBuscarCli.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarCli.TabIndex = 104;
+            this.btnBuscarCli.Text = "Buscar";
+            this.btnBuscarCli.UseVisualStyleBackColor = true;
+            this.btnBuscarCli.Click += new System.EventHandler(this.btnBuscarCli_Click);
             // 
             // frmLocacao
             // 
@@ -313,8 +303,6 @@
             this.ClientSize = new System.Drawing.Size(670, 486);
             this.Controls.Add(this.cbFuncionarios);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbStatusPagamento);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtCodLocacao);
             this.Controls.Add(this.label5);
@@ -359,13 +347,12 @@
         private System.Windows.Forms.TextBox txtCodLocacao;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbStatusPagamento;
         private System.Windows.Forms.ComboBox cbFuncionarios;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaCodBarras;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDescricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaPreco;
+        private System.Windows.Forms.Button btnBuscarCli;
     }
 }

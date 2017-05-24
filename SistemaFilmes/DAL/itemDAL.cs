@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.SqlClient;
 using Models;
 using System.Configuration;
+using System.Data;
 
 namespace DAL
 {
@@ -488,7 +489,6 @@ namespace DAL
         public void ExcluirItem(int codigo)
         {
             SqlConnection conn = new SqlConnection(connectionString);
-
             try
             {
                 conn.Open();
@@ -510,6 +510,5 @@ namespace DAL
                     conn.Close();
             }
         }
-
     }
 }
