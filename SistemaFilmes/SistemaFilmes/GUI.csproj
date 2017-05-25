@@ -116,6 +116,12 @@
     <Compile Include="frmRelatorioItem.Designer.cs">
       <DependentUpon>frmRelatorioItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRelatorioLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorioLocacao.Designer.cs">
+      <DependentUpon>frmRelatorioLocacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCadastroArtista.resx">
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRelatorioItem.resx">
       <DependentUpon>frmRelatorioItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRelatorioLocacao.resx">
+      <DependentUpon>frmRelatorioLocacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

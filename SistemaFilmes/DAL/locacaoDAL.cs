@@ -184,7 +184,7 @@ namespace DAL
             return l;
         }
 
-        public List<Locacao> SelecionarLocacoes(int codigo)
+        public List<Locacao> SelecionarLocacoes()
         {
             List<Locacao> lista = new List<Locacao>();
 
