@@ -64,5 +64,33 @@ namespace SistemaFilmes
             objtela.MdiParent = this;
             objtela.Show();
         }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmRelatorioCli objTela = new frmRelatorioCli();
+            objTela.MdiParent = this;
+            objTela.Show();
+        }
+
+        private void artistasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmRelatorioFunc objTela = new frmRelatorioFunc();
+            objTela.MdiParent = this;
+            objTela.Show();
+        }
+
+        private void artistasToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmRelatorioArt objTela = new frmRelatorioArt();
+            objTela.MdiParent = this;
+            objTela.Show();
+        }
+
+        private void itensToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmRelatorioItem objTela = new frmRelatorioItem();
+            objTela.MdiParent = this;
+            objTela.Show();
+        }
     }
 }

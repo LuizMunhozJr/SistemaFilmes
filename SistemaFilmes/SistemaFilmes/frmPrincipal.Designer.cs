@@ -42,7 +42,6 @@
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.artistasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.artistasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.gênerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itensToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.locaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.locaçõesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,7 +137,6 @@
             this.clientesToolStripMenuItem1,
             this.artistasToolStripMenuItem1,
             this.artistasToolStripMenuItem2,
-            this.gênerosToolStripMenuItem,
             this.itensToolStripMenuItem1,
             this.locaçõesToolStripMenuItem});
             this.rELATORIOSToolStripMenuItem.Name = "rELATORIOSToolStripMenuItem";
@@ -148,32 +146,30 @@
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.clientesToolStripMenuItem1.Text = "Clientes";
+            this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
             // artistasToolStripMenuItem1
             // 
             this.artistasToolStripMenuItem1.Name = "artistasToolStripMenuItem1";
-            this.artistasToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.artistasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.artistasToolStripMenuItem1.Text = "Funcionários";
+            this.artistasToolStripMenuItem1.Click += new System.EventHandler(this.artistasToolStripMenuItem1_Click);
             // 
             // artistasToolStripMenuItem2
             // 
             this.artistasToolStripMenuItem2.Name = "artistasToolStripMenuItem2";
-            this.artistasToolStripMenuItem2.Size = new System.Drawing.Size(142, 22);
+            this.artistasToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.artistasToolStripMenuItem2.Text = "Artistas";
-            // 
-            // gênerosToolStripMenuItem
-            // 
-            this.gênerosToolStripMenuItem.Name = "gênerosToolStripMenuItem";
-            this.gênerosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.gênerosToolStripMenuItem.Text = "Gêneros";
+            this.artistasToolStripMenuItem2.Click += new System.EventHandler(this.artistasToolStripMenuItem2_Click);
             // 
             // itensToolStripMenuItem1
             // 
             this.itensToolStripMenuItem1.Name = "itensToolStripMenuItem1";
-            this.itensToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.itensToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.itensToolStripMenuItem1.Text = "Itens";
+            this.itensToolStripMenuItem1.Click += new System.EventHandler(this.itensToolStripMenuItem1_Click);
             // 
             // locaçõesToolStripMenuItem
             // 
@@ -181,7 +177,7 @@
             this.locaçõesToolStripMenuItem1,
             this.ultimas10LocaçõesToolStripMenuItem});
             this.locaçõesToolStripMenuItem.Name = "locaçõesToolStripMenuItem";
-            this.locaçõesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.locaçõesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.locaçõesToolStripMenuItem.Text = "Locações";
             // 
             // locaçõesToolStripMenuItem1
@@ -231,7 +227,6 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem artistasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem artistasToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem gênerosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itensToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem locaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem locaçõesToolStripMenuItem1;

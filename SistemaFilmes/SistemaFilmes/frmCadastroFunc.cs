@@ -31,7 +31,7 @@ namespace SistemaFilmes
 
             dtpDtNascimento.Value = DateTime.Today;
             cbStatus.Checked = false;
-        }
+        }       
 
         //Retorna um objeto do tipo Funcionario Apartir dos campos do Form
         public Funcionario SelecFunc()
@@ -115,6 +115,11 @@ namespace SistemaFilmes
             funcionarioDAL funcDAL = new funcionarioDAL();
             funcDAL.ExcluirFuncionario(Convert.ToInt32(txtCod.Text));
             LimparTela();
+        }
+
+        private void frmCadastroFunc_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

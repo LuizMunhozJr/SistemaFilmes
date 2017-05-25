@@ -76,21 +76,21 @@ namespace DAL
                     while (dr.Read())
                     {
                         f = new Cliente();
-                        f.Codigo = Convert.ToInt32(dr["Cdcliente"]);
-                        f.Nome = dr["nmFunc"].ToString();
-                        f.DtNascto = Convert.ToDateTime(dr["dtFunc"]);
-                        f.Sexo = dr["sxFunc"].ToString();
-                        f.EstadoCivil = dr["ecFunc"].ToString();
-                        f.RG = dr["rgFunc"].ToString();
-                        f.CPF = dr["cpfFunc"].ToString();
-                        f.Endereco = dr["endFunc"].ToString();
-                        f.Cidade = dr["cidFunc"].ToString();
-                        f.CEP = dr["cepFunc"].ToString();
-                        f.UF = dr["ufFunc"].ToString();
-                        f.TEL = dr["telFunc"].ToString();
-                        f.CEL = dr["celFunc"].ToString();
-                        f.Email = dr["emailFunc"].ToString();
-                        f.Status = Convert.ToBoolean(dr["stsFunc"]);
+                        f.Codigo = Convert.ToInt32(dr["Cdcli"]);
+                        f.Nome = dr["nmCli"].ToString();
+                        f.DtNascto = Convert.ToDateTime(dr["dtCli"]);
+                        f.Sexo = dr["sxCli"].ToString();
+                        f.EstadoCivil = dr["ecCli"].ToString();
+                        f.RG = dr["rgCli"].ToString();
+                        f.CPF = dr["cpfCli"].ToString();
+                        f.Endereco = dr["endCli"].ToString();
+                        f.Cidade = dr["cidCli"].ToString();
+                        f.CEP = dr["cepCli"].ToString();
+                        f.UF = dr["ufCli"].ToString();
+                        f.TEL = dr["telCli"].ToString();
+                        f.CEL = dr["celCli"].ToString();
+                        f.Email = dr["emailCli"].ToString();
+                        f.Status = Convert.ToBoolean(dr["stsCli"]);
 
                         lista.Add(f);
                     }
@@ -176,7 +176,8 @@ namespace DAL
 
                 if (dr.HasRows && dr.Read())
                 {
-                    C = new Cliente();
+                    C = new Cliente(); 
+                    C.Codigo= Convert.ToInt32(dr["cdCli"]);
                     C.CEL = dr["celCli"].ToString();
                     C.CEP = dr["cepCli"].ToString();
                     C.Cidade = dr["cidCli"].ToString();
@@ -254,7 +255,7 @@ namespace DAL
             {
                 conn.Open();
 
-                string sql = "DELETE * FROM Clientes WHERE cdCli = @codigo";
+                string sql = "DELETE FROM Clientes WHERE cdCli = @codigo";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@codigo", codigo);
 

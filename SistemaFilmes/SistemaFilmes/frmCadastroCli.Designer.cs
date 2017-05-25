@@ -71,9 +71,9 @@
             // 
             // btnInserir
             // 
-            this.btnInserir.Location = new System.Drawing.Point(21, 459);
+            this.btnInserir.Location = new System.Drawing.Point(70, 451);
             this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(75, 23);
+            this.btnInserir.Size = new System.Drawing.Size(80, 28);
             this.btnInserir.TabIndex = 39;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
@@ -286,9 +286,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(597, 459);
+            this.btnCancelar.Location = new System.Drawing.Point(556, 451);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(80, 28);
             this.btnCancelar.TabIndex = 42;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -296,9 +296,9 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(213, 459);
+            this.btnAlterar.Location = new System.Drawing.Point(232, 451);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(80, 28);
             this.btnAlterar.TabIndex = 40;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -391,9 +391,9 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(405, 459);
+            this.btnExcluir.Location = new System.Drawing.Point(394, 451);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(80, 28);
             this.btnExcluir.TabIndex = 41;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -454,7 +454,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 494);
+            this.ClientSize = new System.Drawing.Size(719, 494);
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAlterar);
@@ -464,6 +464,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCadastroCli";
             this.Text = "Cadastro de Clientes";
+            this.Load += new System.EventHandler(this.frmCadastroCli_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

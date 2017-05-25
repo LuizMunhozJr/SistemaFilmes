@@ -37,8 +37,10 @@ namespace SistemaFilmes
             pbItem.Image = null;
             pbItem.Refresh();
             dgvGeneros.Rows.Clear();
-
+            dgvParticipacoes.Rows.Clear();
         }
+
+       
 
         private Item SelectItem()
         {
@@ -101,9 +103,7 @@ namespace SistemaFilmes
             }
             else
                 MessageBox.Show("Imagem Requerida");
-        }
-
-        
+        }             
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
@@ -147,16 +147,26 @@ namespace SistemaFilmes
             cbArtistas.DataSource = aDAL.ListarArtistas();
             cbArtistas.DisplayMember = "Nome";
             cbArtistas.ValueMember = "Codigo";
-
         }
 
         private void btnAdicionarGen_Click(object sender, EventArgs e)
         {
             Genero objGen = new Genero();
+            bool RPT = false;
             objGen.Codigo = Convert.ToInt32(cbGeneros.SelectedValue);
             objGen.Nome = cbGeneros.Text;
 
+            foreach (DataGridViewRow linha in dgvGeneros.Rows)
+            {
+                if(Convert.ToInt32(linha.Cells[0].Value)==objGen.Codigo)
+                {
+                    RPT = true;
+                }
+            }
+
+            if (RPT == false) 
             dgvGeneros.Rows.Add(objGen.Codigo,objGen.Nome);
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -166,7 +176,12 @@ namespace SistemaFilmes
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            dgvParticipacoes.Rows.Add(cbArtistas.SelectedValue, cbArtistas.Text, txtPersonagem.Text);
+            if (txtPersonagem.Text != string.Empty)
+            {
+                dgvParticipacoes.Rows.Add(cbArtistas.SelectedValue, cbArtistas.Text, txtPersonagem.Text);
+            }
+            else
+                MessageBox.Show("Insira o Personagem");
         }
     }
 }

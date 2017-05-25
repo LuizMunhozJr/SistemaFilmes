@@ -92,6 +92,30 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRelatorioArt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorioArt.Designer.cs">
+      <DependentUpon>frmRelatorioArt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRelatorioCli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorioCli.Designer.cs">
+      <DependentUpon>frmRelatorioCli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRelatorioFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorioFunc.Designer.cs">
+      <DependentUpon>frmRelatorioFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRelatorioItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorioItem.Designer.cs">
+      <DependentUpon>frmRelatorioItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCadastroArtista.resx">
@@ -117,6 +141,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRelatorioArt.resx">
+      <DependentUpon>frmRelatorioArt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRelatorioCli.resx">
+      <DependentUpon>frmRelatorioCli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRelatorioFunc.resx">
+      <DependentUpon>frmRelatorioFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRelatorioItem.resx">
+      <DependentUpon>frmRelatorioItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

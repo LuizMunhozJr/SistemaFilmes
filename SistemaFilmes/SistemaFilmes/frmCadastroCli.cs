@@ -32,7 +32,7 @@ namespace SistemaFilmes
 
             dtpDtNascimento.Value = DateTime.Today;
             cbStatus.Checked = false;
-        }
+        }    
 
         //Retorna um objeto do tipo Cliente Apartir dos campos do Form
         public Cliente SelecCli()
@@ -74,6 +74,7 @@ namespace SistemaFilmes
             clienteDAL cliDAL = new clienteDAL();
             cliDAL.AlterarCliente(objCli);
             MessageBox.Show("Alterado");
+            LimparTela();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -116,6 +117,16 @@ namespace SistemaFilmes
             cliDAL.ExcluirCliente(Convert.ToInt32(txtCod.Text));
             LimparTela();
             MessageBox.Show("Exluido");
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmCadastroCli_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
