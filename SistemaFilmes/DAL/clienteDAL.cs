@@ -254,7 +254,7 @@ namespace DAL
             {
                 conn.Open();
 
-                string sql = "DELETE FROM Clientes WHERE cdCli = @codigo";
+                string sql = "DELETE * FROM Clientes WHERE cdCli = @codigo";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@codigo", codigo);
 

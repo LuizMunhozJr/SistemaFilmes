@@ -81,8 +81,37 @@ namespace DAL
                 if (conn.State == System.Data.ConnectionState.Open)
                     conn.Close();
             }
-
         }
+        public void AlteraLocacao(Locacao objLoc)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+           
+                try
+                {
+                    conn.Open();
+
+                    string sql = "UPDATE Locacoes SET cdCli=@cdCli, cdFun=@cdFun, dtRetirada=@dtRetirada WHERE cdLocacao = @cdLocacao)";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@cdLocacao", objLoc.cdLocacao);
+                    cmd.Parameters.AddWithValue("@cdCli", objLoc.cdCli);
+                    cmd.Parameters.AddWithValue("@cdFun", objLoc.cdFunc);
+                    cmd.Parameters.AddWithValue("@dtRetirada", objLoc.dtRetirada);
+
+                    cmd.ExecuteNonQuery();
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    if (conn.State == System.Data.ConnectionState.Open)
+                        conn.Close();
+                }
+
+            }
         public void InserirItensLocacao(ItemLocacao objItemLoc)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -90,7 +119,35 @@ namespace DAL
             {
                 conn.Open();
 
-                string sql = "INSERT INTO Locacoes VALUES (@cdLocacao, @cdItem, @statusPG, dtDevolucao)";
+                string sql = "INSERT INTO Locacoes VALUES (@cdLocacao, @cdItem, @statusPG, @dtDevolucao)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@cdLocacao", objItemLoc.cdLocacao);
+                cmd.Parameters.AddWithValue("@cdItem", objItemLoc.cdItem);
+                cmd.Parameters.AddWithValue("@statusPG", objItemLoc.statusPG);
+                cmd.Parameters.AddWithValue("@dtDevolucao", objItemLoc.dtDevolucao);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+        public void AlteraItensLocacao(ItemLocacao objItemLoc)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+                conn.Open();
+
+                string sql = "UPDATE Locacoes SET statusPG = @statusPG, dtDevolucao=@dtDevolucao WHERE cdLocacao = @cdLocacao AND cdItem = @cdItem";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@cdLocacao", objItemLoc.cdLocacao);
                 cmd.Parameters.AddWithValue("@cdItem", objItemLoc.cdItem);
@@ -161,13 +218,8 @@ namespace DAL
                     l = new Locacao();
                     l.cdLocacao = codigo;
                     l.cdFunc = Convert.ToInt32(dr["cdFunc"]);
-                    l.cdFilme = Convert.ToInt32(dr["cdFilme"]);
                     l.cdCli = Convert.ToInt32(dr["cdCli"]);
                     l.dtRetirada = Convert.ToDateTime(dr["dtRetirada"]);
-                    l.dtDevolucao = Convert.ToDateTime(dr["dtDevolucao"]); 
-                    // l.StatusPG = dr["StatusPG"].ToString();
-                    //l.qdteFilmesLocados = dr.HasRows
-
                 }
             }
             catch (Exception)
@@ -184,8 +236,57 @@ namespace DAL
             return l;
         }
 
+        /*      string sql = "DELETE FROM Clientes WHERE cdCli = @codigo";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@codigo", codigo);
 
+                cmd.ExecuteNonQuery();
+        */
+        public void ExcluirLocacao(int codigo)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+                conn.Open();
+                string sql = "DELETE * FROM Locacoes WHERE cdLocacao = @codigo";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@codigo", codigo);
+                
+                cmd.ExecuteNonQuery();
 
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+        public void ExcluirItensLocacao(int codigo)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+                conn.Open();
+                string sql = "DELETE * FROM ItemLocacao WHERE cdLocacao = @codigo";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@codigo", codigo);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+        }
     }
 }

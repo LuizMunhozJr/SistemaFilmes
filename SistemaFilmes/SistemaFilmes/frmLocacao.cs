@@ -75,15 +75,24 @@ namespace SistemaFilmes
                 Iloc.statusPG = "Em Aberto";
                 lDAL.InserirItensLocacao(Iloc);
             }
+            MessageBox.Show("Inserido com Sucesso!!!");
 
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             Locacao loc = new Locacao();
+            funcionarioDAL fDAL = new funcionarioDAL();
             locacaoDAL lDAL = new locacaoDAL();
+            clienteDAL cDAL = new clienteDAL();
+            Cliente Cli = new Cliente();
 
             loc = lDAL.SelecionarLocacaoPeloCodigo(Convert.ToInt32(txtCodLocacao.Text));
+            cbFuncionarios.SelectedIndex = loc.cdFunc;
+            txtCPF.Text = (Cli=cDAL.BuscarCliente(loc.cdCli)).CPF;
+            txtNome.Text = Cli.Nome;
+            dtpAtual.Text = loc.dtRetirada.ToString();
+            dgvItens.DataSource = lDAL.SelecionarTodosItensNumeroPedido(loc.cdLocacao);
             txtCodLocacao.Text = loc.cdLocacao.ToString();
         }
 
@@ -108,6 +117,35 @@ namespace SistemaFilmes
             Cli = cDAL.BuscarClienteCPF(txtCPF.Text);
             txtCPF.Text = Cli.CPF.ToString();
             txtNome.Text = Cli.Nome.ToString();
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Locacao loc = new Locacao();
+            ItemLocacao Iloc = new ItemLocacao();
+            locacaoDAL lDAL = new locacaoDAL();
+            loc.cdCli = Cli.Codigo;
+            loc.cdFunc = cbFuncionarios.SelectedIndex;
+            loc.dtRetirada = Convert.ToDateTime(dtpAtual.Text);
+            lDAL.AlteraLocacao(loc);
+            Iloc.cdLocacao = loc.cdLocacao;
+            for (int i = 0; i <= dgvItens.TabIndex; i++)
+            {
+                Iloc.cdItem = (int)dgvItens.Rows[i].Cells[0].Value;
+                Iloc.dtDevolucao = Convert.ToDateTime(dtpAtual.Text).AddDays(5);
+                Iloc.statusPG = "Em Aberto";
+                lDAL.AlteraItensLocacao(Iloc);
+            }
+            MessageBox.Show("Alterado com Sucesso!!");
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            locacaoDAL lDAL = new locacaoDAL();
+            lDAL.ExcluirLocacao(Convert.ToInt32(txtCodLocacao.Text));
+            lDAL.ExcluirItensLocacao(Convert.ToInt32(txtCodLocacao.Text));
+            MessageBox.Show("Excluido com Sucesso!!!");
 
         }
     }

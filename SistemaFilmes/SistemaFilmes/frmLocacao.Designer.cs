@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarCli = new System.Windows.Forms.Button();
             this.dtpAtual = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cbFuncionarios = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarCli = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -74,6 +74,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Cliente";
+            // 
+            // btnBuscarCli
+            // 
+            this.btnBuscarCli.Location = new System.Drawing.Point(195, 26);
+            this.btnBuscarCli.Name = "btnBuscarCli";
+            this.btnBuscarCli.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarCli.TabIndex = 104;
+            this.btnBuscarCli.Text = "Buscar";
+            this.btnBuscarCli.UseVisualStyleBackColor = true;
+            this.btnBuscarCli.Click += new System.EventHandler(this.btnBuscarCli_Click);
             // 
             // dtpAtual
             // 
@@ -233,6 +243,7 @@
             this.btnAlterar.TabIndex = 52;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnExcluir
             // 
@@ -242,6 +253,7 @@
             this.btnExcluir.TabIndex = 53;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // txtCodLocacao
             // 
@@ -285,16 +297,6 @@
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 97;
             this.label1.Text = "Funcionario:";
-            // 
-            // btnBuscarCli
-            // 
-            this.btnBuscarCli.Location = new System.Drawing.Point(195, 26);
-            this.btnBuscarCli.Name = "btnBuscarCli";
-            this.btnBuscarCli.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarCli.TabIndex = 104;
-            this.btnBuscarCli.Text = "Buscar";
-            this.btnBuscarCli.UseVisualStyleBackColor = true;
-            this.btnBuscarCli.Click += new System.EventHandler(this.btnBuscarCli_Click);
             // 
             // frmLocacao
             // 
