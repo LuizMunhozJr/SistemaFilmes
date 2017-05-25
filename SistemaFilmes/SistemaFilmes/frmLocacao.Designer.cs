@@ -38,10 +38,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvItens = new System.Windows.Forms.DataGridView();
-            this.colunaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaCodBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cbItens = new System.Windows.Forms.ComboBox();
@@ -149,44 +145,12 @@
             // 
             // dgvItens
             // 
-            this.dgvItens.AllowUserToAddRows = false;
+            this.dgvItens.AllowUserToOrderColumns = true;
             this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colunaCodigo,
-            this.colunaCodBarras,
-            this.colunaDescricao,
-            this.colunaPreco});
             this.dgvItens.Location = new System.Drawing.Point(16, 61);
             this.dgvItens.Name = "dgvItens";
-            this.dgvItens.ReadOnly = true;
             this.dgvItens.Size = new System.Drawing.Size(608, 150);
             this.dgvItens.TabIndex = 3;
-            // 
-            // colunaCodigo
-            // 
-            this.colunaCodigo.HeaderText = "Codigo";
-            this.colunaCodigo.Name = "colunaCodigo";
-            this.colunaCodigo.ReadOnly = true;
-            // 
-            // colunaCodBarras
-            // 
-            this.colunaCodBarras.HeaderText = "Codigo de Barras";
-            this.colunaCodBarras.Name = "colunaCodBarras";
-            this.colunaCodBarras.ReadOnly = true;
-            this.colunaCodBarras.Width = 150;
-            // 
-            // colunaDescricao
-            // 
-            this.colunaDescricao.HeaderText = "Descricao";
-            this.colunaDescricao.Name = "colunaDescricao";
-            this.colunaDescricao.ReadOnly = true;
-            this.colunaDescricao.Width = 215;
-            // 
-            // colunaPreco
-            // 
-            this.colunaPreco.HeaderText = "Preço";
-            this.colunaPreco.Name = "colunaPreco";
-            this.colunaPreco.ReadOnly = true;
             // 
             // btnAddItem
             // 
@@ -351,10 +315,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox cbFuncionarios;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCodBarras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaDescricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaPreco;
         private System.Windows.Forms.Button btnBuscarCli;
     }
 }

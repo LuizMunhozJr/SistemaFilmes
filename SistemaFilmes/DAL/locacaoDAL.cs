@@ -13,29 +13,33 @@ namespace DAL
     {
         string connectionString = ConfigurationManager.ConnectionStrings["BDVideolandiaConnectionString"].ConnectionString;
 
-        public List<Item> SelecionarTodosItensNumeroPedido(int codigo)
+        public List<ItemDevolucao> SelecionarTodosItensNumeroPedido(int codigo)
         {
-            List<Item> lista = new List<Item>();
+            List<ItemDevolucao> lista = new List<ItemDevolucao>();
 
             SqlConnection conn = new SqlConnection(connectionString);
 
             try
             {
                 conn.Open();
-                string sql = "select * from Filmes where cdFilme = (select cdFilme from ItemLocacao where cdLocacao = @codigo)";
+                string sql = "Select I.cdItem,I.cddbarItem,I.dsItem,I.precoItem,IL.statusPG,IL.dtDevolucao, IL.CodLocacao from Itens I inner join ItemLocacao IL ON( I.cdItem = IL.cdItem) WHERE cdLocacao = @codigo";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
-                    Item i;
+                    ItemDevolucao i;
                     while (dr.Read())
                     {
-                        i = new Item();
-                        i.Codigo = Convert.ToInt32(dr["cdFilme"]);
-                        i.CodigoDeBarras = dr["cddbarFilme"].ToString();
-                        i.Descricao = dr["dsFilme"].ToString();
-                        i.Preco = Convert.ToDecimal(dr["precoFilme"]);
+                        i = new ItemDevolucao();
+                        i.cdItem = Convert.ToInt32(dr["I.cdItem"]);
+                        i.cddbarItem = dr["I.cddbarItem"].ToString();
+                        i.dsItem = dr["I.dsItem"].ToString();
+                        i.precoItem = Convert.ToDecimal(dr["I.precoItem"]);
+                        i.statusPG = dr["IL.statusPG"].ToString();
+                        i.dtDevolucao = Convert.ToDateTime(dr["IL.dtDevolucao"]);
+                        i.cdLocacao = Convert.ToInt32(dr["IL.cdCodLocacao"]);
+
 
                         lista.Add(i);
                     }
@@ -54,6 +58,49 @@ namespace DAL
             }
 
             return lista;
+        }
+        public ItemDevolucao SelecionarItemDevolucaoCodBar(string codigo)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            ItemDevolucao i = new ItemDevolucao();
+            try
+            {
+                conn.Open();
+                string sql = "Select I.cdItem,I.cddbarItem,I.dsItem,I.precoItem,IL.statusPG,IL.dtDevolucao,IL.CodLocacao from Itens I inner join ItemLocacao IL ON( I.cdItem = IL.cdItem) WHERE cddbarItem = @codigo";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    
+                    while (dr.Read())
+                    {
+                        i = new ItemDevolucao();
+                        i.cdItem = Convert.ToInt32(dr["I.cdItem"]);
+                        i.cddbarItem = dr["I.cddbarItem"].ToString();
+                        i.dsItem = dr["I.dsItem"].ToString();
+                        i.precoItem = Convert.ToDecimal(dr["I.precoItem"]);
+                        i.statusPG = dr["IL.statusPG"].ToString();
+                        i.dtDevolucao = Convert.ToDateTime(dr["IL.dtDevolucao"]);
+                        i.cdLocacao = Convert.ToInt32(dr["IL.cdLocacao"]);
+
+
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return i;
         }
         public void InserirLocacao(Locacao objLoc)
         {
@@ -236,12 +283,6 @@ namespace DAL
             return l;
         }
 
-        /*      string sql = "DELETE FROM Clientes WHERE cdCli = @codigo";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@codigo", codigo);
-
-                cmd.ExecuteNonQuery();
-        */
         public void ExcluirLocacao(int codigo)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -280,6 +321,34 @@ namespace DAL
             }
             catch (Exception)
             {
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+        public void ConfirmaPagamento(int cdItem, int cdLocacao)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+                conn.Open();
+
+                string sql = "UPDATE Locacoes SET statusPG = @statusPG, dtDevolucao=@dtDevolucao WHERE cdLocacao = @cdLocacao AND cdItem = @cdItem";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@cdLocacao", cdLocacao);
+                cmd.Parameters.AddWithValue("@cdItem", cdItem);
+                cmd.Parameters.AddWithValue("@statusPG", "PAGO");
+                cmd.Parameters.AddWithValue("@dtDevolucao", DateTime.Now);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
             finally
