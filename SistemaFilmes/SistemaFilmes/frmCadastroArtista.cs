@@ -58,6 +58,7 @@ namespace SistemaFilmes
                 pbArtista.Image = Image.FromStream(new MemoryStream(Art.Imagem));
                 pbArtista.Refresh();
                // dgvItensArtista.DataSource = aDAL.SelecionarItensDoArtista(Art.Codigo);
+               if(aDAL.ListarParticipacoes(Convert.ToInt32(txtCodArt.Text))!=null)
                 dgvItensArtista.DataSource = aDAL.ListarParticipacoes(Convert.ToInt32(txtCodArt.Text));
             }
             else
@@ -115,6 +116,11 @@ namespace SistemaFilmes
         private void frmCadastroArtista_Load(object sender, EventArgs e)
         {
             artistaDAL aDAL = new artistaDAL();            
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpaTelaArtista();
         }
     }
 

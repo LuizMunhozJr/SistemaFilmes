@@ -108,12 +108,15 @@ namespace SistemaFilmes
             Funcionario objfunc = SelecFunc();
             funcionarioDAL funcDAL = new funcionarioDAL();
             funcDAL.AlteraFuncionario(objfunc);
+            MessageBox.Show("Alterado com Sucesso!!");
+            LimparTela();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             funcionarioDAL funcDAL = new funcionarioDAL();
             funcDAL.ExcluirFuncionario(Convert.ToInt32(txtCod.Text));
+            MessageBox.Show("Excluido com Sucesso!!");
             LimparTela();
         }
 

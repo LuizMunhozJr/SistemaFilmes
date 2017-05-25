@@ -59,5 +59,10 @@ namespace SistemaFilmes
             LimparTela();
             MessageBox.Show("Excluido");
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimparTela();
+        }
     }
 }
