@@ -44,6 +44,7 @@
             this.artistasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.itensToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.locaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cADASTROToolStripMenuItem,
             this.lOCAÇÃOToolStripMenuItem,
-            this.rELATORIOSToolStripMenuItem});
+            this.rELATORIOSToolStripMenuItem,
+            this.testeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(634, 24);
@@ -176,6 +178,12 @@
             this.locaçõesToolStripMenuItem.Text = "Locações";
             this.locaçõesToolStripMenuItem.Click += new System.EventHandler(this.locaçõesToolStripMenuItem_Click);
             // 
+            // testeToolStripMenuItem
+            // 
+            this.testeToolStripMenuItem.Name = "testeToolStripMenuItem";
+            this.testeToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.testeToolStripMenuItem.Text = "Teste";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +221,7 @@
         private System.Windows.Forms.ToolStripMenuItem artistasToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem itensToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem locaçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem;
     }
 }
 
