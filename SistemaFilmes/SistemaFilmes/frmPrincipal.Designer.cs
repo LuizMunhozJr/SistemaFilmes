@@ -44,8 +44,6 @@
             this.artistasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.itensToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.locaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.locaçõesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ultimas10LocaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,24 +171,10 @@
             // 
             // locaçõesToolStripMenuItem
             // 
-            this.locaçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.locaçõesToolStripMenuItem1,
-            this.ultimas10LocaçõesToolStripMenuItem});
             this.locaçõesToolStripMenuItem.Name = "locaçõesToolStripMenuItem";
             this.locaçõesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.locaçõesToolStripMenuItem.Text = "Locações";
-            // 
-            // locaçõesToolStripMenuItem1
-            // 
-            this.locaçõesToolStripMenuItem1.Name = "locaçõesToolStripMenuItem1";
-            this.locaçõesToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
-            this.locaçõesToolStripMenuItem1.Text = "Todas as Locações";
-            // 
-            // ultimas10LocaçõesToolStripMenuItem
-            // 
-            this.ultimas10LocaçõesToolStripMenuItem.Name = "ultimas10LocaçõesToolStripMenuItem";
-            this.ultimas10LocaçõesToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.ultimas10LocaçõesToolStripMenuItem.Text = "Ultimas 10 Locações";
+            this.locaçõesToolStripMenuItem.Click += new System.EventHandler(this.locaçõesToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -229,8 +213,6 @@
         private System.Windows.Forms.ToolStripMenuItem artistasToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem itensToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem locaçõesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem locaçõesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem ultimas10LocaçõesToolStripMenuItem;
     }
 }
 

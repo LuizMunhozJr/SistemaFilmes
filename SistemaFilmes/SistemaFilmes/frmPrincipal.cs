@@ -92,5 +92,12 @@ namespace SistemaFilmes
             objTela.MdiParent = this;
             objTela.Show();
         }
+
+        private void locaçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorioLocacao objTela = new frmRelatorioLocacao();
+            objTela.MdiParent = this;
+            objTela.Show();
+        }
     }
 }
