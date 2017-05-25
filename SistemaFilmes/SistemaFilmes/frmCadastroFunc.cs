@@ -95,6 +95,8 @@ namespace SistemaFilmes
                 cbStatus.Checked = Convert.ToBoolean(objfunc.Status);
                 cbUF.Text = objfunc.UF;
                 dtpDtNascimento.Value = objfunc.DtNascto;
+                funcionarioDAL fDAL = new funcionarioDAL();
+                dgvPendencias.DataSource = fDAL.ListarPendencias(Convert.ToInt32(txtCod.Text));
             }
         }
 
