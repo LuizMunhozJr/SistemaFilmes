@@ -90,7 +90,7 @@ namespace DAL
             {
                 conn.Open();
 
-                string sql = "INSERT INTO ItemLocacao VALUES (@cdLocacao, @cdItem,@statusPG,dtDevolucao)";
+                string sql = "INSERT INTO ItemLocacao VALUES (@cdLocacao, @cdItem,@statusPG,@dtDevolucao)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@cdLocacao", objItemLoc.cdLocacao);
                 cmd.Parameters.AddWithValue("@cdItem", objItemLoc.cdItem);

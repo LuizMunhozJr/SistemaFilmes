@@ -72,13 +72,15 @@ namespace SistemaFilmes
             lDAL.InserirLocacao(loc);
             Iloc.cdLocacao = lDAL.BuscarCodUltimaLocacao();
 
-            for (int i=0; i <= dgvItens.TabIndex; i++)
+            foreach (DataGridViewRow linha in dgvItens.Rows)
             {
-                Iloc.cdItem = (int)dgvItens.Rows[i].Cells[0].Value;
+                Iloc.cdItem = Convert.ToInt32(linha.Cells[0].Value);
                 Iloc.dtDevolucao = Convert.ToDateTime(dtpAtual.Text).AddDays(5);
                 Iloc.statusPG = "Em Aberto";
                 lDAL.InserirItensLocacao(Iloc);
             }
+                
+            
 
         }
 
