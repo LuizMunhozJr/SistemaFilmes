@@ -224,5 +224,55 @@ namespace DAL
                     conn.Close();
             }
         }
+
+        public List<Pendencias> ListarPendencias(int cod)
+        {
+            List<Pendencias> lista = new List<Pendencias>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string sql = @"select C.nmCli as 'Cliente', I.dsItem as 'Item',IL.dtDevolucao as 'Data Devolução' from Funcionarios as F 
+                            inner join Locacoes as L on L.cdFunc = F.cdFunc
+                            inner join ItemLocacao as IL on L.cdLocacao = IL.cdLocacao
+                            inner join Itens as I on I.cdItem = IL.cdItem
+                            inner join Clientes as C on C.cdCli = L.cdCli
+                            Where F.cdFunc = @cod and IL.statusPG = 'NÃO PAGO'";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@cod", cod);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    Pendencias P = null;
+                    while (dr.Read())
+                    {
+                        P = new Pendencias();
+                        P.Cliente = dr["Cliente"].ToString();
+                        P.Itens = dr["Item"].ToString();
+                        P.dtDevolucao = Convert.ToDateTime(dr["Data Devolução"]);
+                        lista.Add(P);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+
+            return lista;
+        }
+
     }
 }

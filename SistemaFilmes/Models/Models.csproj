@@ -48,6 +48,7 @@
     <Compile Include="ItemLocacao.cs" />
     <Compile Include="Locacao.cs" />
     <Compile Include="Participacoes.cs" />
+    <Compile Include="Pendencias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
