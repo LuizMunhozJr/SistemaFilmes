@@ -65,7 +65,7 @@ namespace SistemaFilmes
             Locacao loc = new Locacao();
             ItemLocacao Iloc = new ItemLocacao();
             locacaoDAL lDAL = new locacaoDAL();
-            loc.cdCli = Cli.Codigo;
+            loc.cdCli = Convert.ToInt32(txtCod.Text);
             loc.cdFunc = cbFuncionarios.SelectedIndex;
             loc.dtRetirada = Convert.ToDateTime(dtpAtual.Text);
             loc.cdFunc = Convert.ToInt32(cbFuncionarios.SelectedValue);
@@ -101,7 +101,6 @@ namespace SistemaFilmes
             objItem = iDAL.BuscarItemCodigo(Convert.ToInt32(cbItens.SelectedValue));
             dgvItens.Rows.Add(objItem.Codigo, objItem.CodigoDeBarras, objItem.Descricao, objItem.Preco);
             txtTotal.Text = Convert.ToString((Convert.ToDecimal(txtTotal.Text) + objItem.Preco));
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -115,7 +114,15 @@ namespace SistemaFilmes
             Cli = cDAL.BuscarClienteCPF(txtCPF.Text);
             txtCPF.Text = Cli.CPF.ToString();
             txtNome.Text = Cli.Nome.ToString();
+            txtCod.Text =Convert.ToString(Cli.Codigo);
 
+        }
+
+        private void btnBuscarCliCod_Click(object sender, EventArgs e)
+        {
+            Cli = cDAL.BuscarCliente(Convert.ToInt32(txtCod.Text));
+            txtCPF.Text = Cli.CPF.ToString();
+            txtNome.Text = Cli.Nome.ToString();
         }
     }
 }

@@ -65,6 +65,7 @@ namespace SistemaFilmes
             clienteDAL cliDAL = new clienteDAL();
 
             cliDAL.InserirCliente(objCli);
+            MessageBox.Show("Cliente Cadastrado");
             LimparTela();
         }
 

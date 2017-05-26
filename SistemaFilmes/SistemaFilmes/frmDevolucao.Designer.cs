@@ -46,6 +46,13 @@
             this.lblTextoTroco = new System.Windows.Forms.Label();
             this.lblTotalAPagar = new System.Windows.Forms.Label();
             this.lblTroco = new System.Windows.Forms.Label();
+            this.cdLocacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cddbarItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusPG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtDevolucao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevolucao)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -64,6 +71,14 @@
             // dgvDevolucao
             // 
             this.dgvDevolucao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDevolucao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cdLocacao,
+            this.cdItem,
+            this.cddbarItem,
+            this.dsItem,
+            this.precoItem,
+            this.statusPG,
+            this.dtDevolucao});
             this.dgvDevolucao.Location = new System.Drawing.Point(7, 20);
             this.dgvDevolucao.Name = "dgvDevolucao";
             this.dgvDevolucao.Size = new System.Drawing.Size(742, 225);
@@ -225,6 +240,41 @@
             this.lblTroco.TabIndex = 10;
             this.lblTroco.Text = "0.00";
             // 
+            // cdLocacao
+            // 
+            this.cdLocacao.HeaderText = "cdLocacao";
+            this.cdLocacao.Name = "cdLocacao";
+            // 
+            // cdItem
+            // 
+            this.cdItem.HeaderText = "cdItem";
+            this.cdItem.Name = "cdItem";
+            // 
+            // cddbarItem
+            // 
+            this.cddbarItem.HeaderText = "cddbarItem";
+            this.cddbarItem.Name = "cddbarItem";
+            // 
+            // dsItem
+            // 
+            this.dsItem.HeaderText = "dsItem";
+            this.dsItem.Name = "dsItem";
+            // 
+            // precoItem
+            // 
+            this.precoItem.HeaderText = "precoItem";
+            this.precoItem.Name = "precoItem";
+            // 
+            // statusPG
+            // 
+            this.statusPG.HeaderText = "statusPG";
+            this.statusPG.Name = "statusPG";
+            // 
+            // dtDevolucao
+            // 
+            this.dtDevolucao.HeaderText = "dtDevolucao";
+            this.dtDevolucao.Name = "dtDevolucao";
+            // 
             // frmDevolucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,5 +323,12 @@
         private System.Windows.Forms.Label lblTextoTroco;
         private System.Windows.Forms.Label lblTotalAPagar;
         private System.Windows.Forms.Label lblTroco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cdLocacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cdItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cddbarItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dsItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precoItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusPG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtDevolucao;
     }
 }

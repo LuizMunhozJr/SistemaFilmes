@@ -13,29 +13,33 @@ namespace DAL
     {
         string connectionString = ConfigurationManager.ConnectionStrings["BDVideolandiaConnectionString"].ConnectionString;
 
-        public List<Item> SelecionarTodosItensNumeroPedido(int codigo)
+        public List<ItemDevolucao> SelecionarTodosItensNumeroPedido(int codigo)
         {
-            List<Item> lista = new List<Item>();
+            List<ItemDevolucao> lista = new List<ItemDevolucao>();
 
             SqlConnection conn = new SqlConnection(connectionString);
-
+           
             try
             {
                 conn.Open();
-                string sql = "select * from Filmes where cdFilme = (select cdFilme from ItemLocacao where cdLocacao = @codigo)";
+                string sql = "Select I.cdItem, I.cdbarItem,I.dsItem,I.precoItem,IL.statusPG,IL.dtDevolucao,IL.CdLocacao from Itens I inner join ItemLocacao IL ON( I.cdItem = IL.cdItem) WHERE IL.cdLocacao = @codigo";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-
+                cmd.Parameters.AddWithValue("@codigo", codigo);
                 SqlDataReader dr = cmd.ExecuteReader();
+
                 if (dr.HasRows)
                 {
-                    Item i;
+                    ItemDevolucao i;
                     while (dr.Read())
                     {
-                        i = new Item();
-                        i.Codigo = Convert.ToInt32(dr["cdFilme"]);
-                        i.CodigoDeBarras = dr["cddbarFilme"].ToString();
-                        i.Descricao = dr["dsFilme"].ToString();
-                        i.Preco = Convert.ToDecimal(dr["precoFilme"]);
+                        i = new ItemDevolucao();
+                        i.cdItem = Convert.ToInt32(dr["cdItem"]);
+                        i.cddbarItem = dr["cdbarItem"].ToString();
+                        i.dsItem = dr["dsItem"].ToString();
+                        i.precoItem = Convert.ToDecimal(dr["precoItem"]);
+                        i.statusPG = dr["statusPG"].ToString();
+                        i.dtDevolucao = Convert.ToDateTime(dr["dtDevolucao"]);
+                        i.cdLocacao = Convert.ToInt32(dr["cdLocacao"]);
 
                         lista.Add(i);
                     }
@@ -85,6 +89,7 @@ namespace DAL
         }
         public void InserirItensLocacao(ItemLocacao objItemLoc)
         {
+
             SqlConnection conn = new SqlConnection(connectionString);
             try
             {
@@ -190,9 +195,9 @@ namespace DAL
              try
              {
                  conn.Open();
-                 string sql = "Select I.cdItem,I.cddbarItem,I.dsItem,I.precoItem,IL.statusPG,IL.dtDevolucao,IL.CodLocacao from Itens I inner join ItemLocacao IL ON( I.cdItem = IL.cdItem) WHERE cddbarItem = @codigo";
+                 string sql = "Select I.cdItem,I.cdbarItem,I.dsItem,I.precoItem,IL.statusPG,IL.dtDevolucao,IL.CdLocacao from Itens I inner join ItemLocacao IL ON( I.cdItem = IL.cdItem) WHERE cdbarItem = @codigo";
                  SqlCommand cmd = new SqlCommand(sql, conn);
- 
+                cmd.Parameters.AddWithValue("@codigo", codigo);
                  SqlDataReader dr = cmd.ExecuteReader();
                  if (dr.HasRows)
                  {
@@ -200,14 +205,13 @@ namespace DAL
                      while (dr.Read())
                      {
                          i = new ItemDevolucao();
-                         i.cdItem = Convert.ToInt32(dr["I.cdItem"]);
-                         i.cddbarItem = dr["I.cddbarItem"].ToString();
-                         i.dsItem = dr["I.dsItem"].ToString();
-                         i.precoItem = Convert.ToDecimal(dr["I.precoItem"]);
-                         i.statusPG = dr["IL.statusPG"].ToString();
-                         i.dtDevolucao = Convert.ToDateTime(dr["IL.dtDevolucao"]);
-                         i.cdLocacao = Convert.ToInt32(dr["IL.cdLocacao"]);
- 
+                         i.cdItem = Convert.ToInt32(dr["cdItem"]);
+                         i.cddbarItem = dr["cdbarItem"].ToString();
+                         i.dsItem = dr["dsItem"].ToString();
+                         i.precoItem = Convert.ToDecimal(dr["precoItem"]);
+                         i.statusPG = dr["statusPG"].ToString();
+                         i.dtDevolucao = Convert.ToDateTime(dr["dtDevolucao"]);
+                         i.cdLocacao = Convert.ToInt32(dr["cdLocacao"]);
  
                      }
                  }
@@ -233,7 +237,7 @@ namespace DAL
              {
                  conn.Open();
  
-                 string sql = "UPDATE Locacoes SET statusPG = @statusPG, dtDevolucao=@dtDevolucao WHERE cdLocacao = @cdLocacao AND cdItem = @cdItem";
+                 string sql = "UPDATE ItemLocacao SET statusPG = @statusPG, dtDevolucao=@dtDevolucao WHERE cdLocacao = @cdLocacao AND cdItem = @cdItem";
                  SqlCommand cmd = new SqlCommand(sql, conn);
                  cmd.Parameters.AddWithValue("@cdLocacao", cdLocacao);
                  cmd.Parameters.AddWithValue("@cdItem", cdItem);

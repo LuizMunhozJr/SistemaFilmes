@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarCliCod = new System.Windows.Forms.Button();
+            this.txtCod = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnBuscarCli = new System.Windows.Forms.Button();
             this.dtpAtual = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,6 +57,10 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDTentrega = new System.Windows.Forms.TextBox();
+            this.itemCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdBarItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -61,6 +68,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBuscarCliCod);
+            this.groupBox1.Controls.Add(this.txtCod);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnBuscarCli);
             this.groupBox1.Controls.Add(this.dtpAtual);
             this.groupBox1.Controls.Add(this.label3);
@@ -68,16 +78,42 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtCPF);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(3, 114);
+            this.groupBox1.Location = new System.Drawing.Point(3, 108);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(642, 113);
+            this.groupBox1.Size = new System.Drawing.Size(642, 135);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Cliente";
             // 
+            // btnBuscarCliCod
+            // 
+            this.btnBuscarCliCod.Location = new System.Drawing.Point(208, 21);
+            this.btnBuscarCliCod.Name = "btnBuscarCliCod";
+            this.btnBuscarCliCod.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarCliCod.TabIndex = 107;
+            this.btnBuscarCliCod.Text = "Buscar";
+            this.btnBuscarCliCod.UseVisualStyleBackColor = true;
+            this.btnBuscarCliCod.Click += new System.EventHandler(this.btnBuscarCliCod_Click);
+            // 
+            // txtCod
+            // 
+            this.txtCod.Location = new System.Drawing.Point(62, 23);
+            this.txtCod.Name = "txtCod";
+            this.txtCod.Size = new System.Drawing.Size(140, 20);
+            this.txtCod.TabIndex = 106;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 26);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 13);
+            this.label9.TabIndex = 105;
+            this.label9.Text = "Código: ";
+            // 
             // btnBuscarCli
             // 
-            this.btnBuscarCli.Location = new System.Drawing.Point(195, 26);
+            this.btnBuscarCli.Location = new System.Drawing.Point(208, 47);
             this.btnBuscarCli.Name = "btnBuscarCli";
             this.btnBuscarCli.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarCli.TabIndex = 104;
@@ -88,7 +124,7 @@
             // dtpAtual
             // 
             this.dtpAtual.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAtual.Location = new System.Drawing.Point(49, 78);
+            this.dtpAtual.Location = new System.Drawing.Point(62, 101);
             this.dtpAtual.Name = "dtpAtual";
             this.dtpAtual.Size = new System.Drawing.Size(140, 20);
             this.dtpAtual.TabIndex = 103;
@@ -96,7 +132,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 83);
+            this.label3.Location = new System.Drawing.Point(27, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 102;
@@ -104,7 +140,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(49, 53);
+            this.txtNome.Location = new System.Drawing.Point(62, 75);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(402, 20);
             this.txtNome.TabIndex = 101;
@@ -112,7 +148,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 57);
+            this.label2.Location = new System.Drawing.Point(20, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 100;
@@ -120,7 +156,7 @@
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(49, 28);
+            this.txtCPF.Location = new System.Drawing.Point(62, 49);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(140, 20);
             this.txtCPF.TabIndex = 99;
@@ -128,7 +164,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 31);
+            this.label6.Location = new System.Drawing.Point(28, 53);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 98;
@@ -140,7 +176,7 @@
             this.groupBox3.Controls.Add(this.btnAddItem);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.cbItens);
-            this.groupBox3.Location = new System.Drawing.Point(3, 234);
+            this.groupBox3.Location = new System.Drawing.Point(3, 246);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(642, 216);
             this.groupBox3.TabIndex = 2;
@@ -149,10 +185,17 @@
             // 
             // dgvItens
             // 
-            this.dgvItens.AllowUserToOrderColumns = true;
+            this.dgvItens.AllowUserToAddRows = false;
+            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.itemCodigo,
+            this.cdBarItem,
+            this.Descricao,
+            this.Preco});
             this.dgvItens.Location = new System.Drawing.Point(16, 61);
             this.dgvItens.Name = "dgvItens";
+            this.dgvItens.ReadOnly = true;
             this.dgvItens.Size = new System.Drawing.Size(608, 150);
             this.dgvItens.TabIndex = 3;
             // 
@@ -185,7 +228,7 @@
             // 
             // btnInserir
             // 
-            this.btnInserir.Location = new System.Drawing.Point(96, 465);
+            this.btnInserir.Location = new System.Drawing.Point(96, 473);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(81, 31);
             this.btnInserir.TabIndex = 51;
@@ -195,7 +238,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(477, 465);
+            this.btnCancelar.Location = new System.Drawing.Point(477, 473);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(81, 31);
             this.btnCancelar.TabIndex = 54;
@@ -205,7 +248,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(223, 465);
+            this.btnAlterar.Location = new System.Drawing.Point(223, 473);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(81, 31);
             this.btnAlterar.TabIndex = 52;
@@ -214,7 +257,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(350, 465);
+            this.btnExcluir.Location = new System.Drawing.Point(350, 473);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(81, 31);
             this.btnExcluir.TabIndex = 53;
@@ -300,11 +343,35 @@
             this.txtDTentrega.TabIndex = 103;
             this.txtDTentrega.Text = "0";
             // 
+            // itemCodigo
+            // 
+            this.itemCodigo.HeaderText = "Código";
+            this.itemCodigo.Name = "itemCodigo";
+            this.itemCodigo.ReadOnly = true;
+            // 
+            // cdBarItem
+            // 
+            this.cdBarItem.HeaderText = "Cód de Barra";
+            this.cdBarItem.Name = "cdBarItem";
+            this.cdBarItem.ReadOnly = true;
+            // 
+            // Descricao
+            // 
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            // 
+            // Preco
+            // 
+            this.Preco.HeaderText = "Preço";
+            this.Preco.Name = "Preco";
+            this.Preco.ReadOnly = true;
+            // 
             // frmLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 512);
+            this.ClientSize = new System.Drawing.Size(651, 512);
             this.Controls.Add(this.txtDTentrega);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtTotal);
@@ -362,5 +429,12 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDTentrega;
+        private System.Windows.Forms.Button btnBuscarCliCod;
+        private System.Windows.Forms.TextBox txtCod;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cdBarItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
     }
 }

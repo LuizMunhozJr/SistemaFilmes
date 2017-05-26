@@ -57,15 +57,6 @@
             this.dgvGeneros = new System.Windows.Forms.DataGridView();
             this.colunaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
-            this.label16 = new System.Windows.Forms.Label();
-            this.dtpRetirada = new System.Windows.Forms.DateTimePicker();
-            this.txtTelCli = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtNomeCli = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -88,7 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbItem)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneros)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParticipacoes)).BeginInit();
             this.gp.SuspendLayout();
@@ -117,7 +107,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtDescricao);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 65);
+            this.groupBox1.Location = new System.Drawing.Point(12, 168);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(565, 262);
             this.groupBox1.TabIndex = 38;
@@ -180,7 +170,6 @@
             this.cbTipoItem.Name = "cbTipoItem";
             this.cbTipoItem.Size = new System.Drawing.Size(147, 21);
             this.cbTipoItem.TabIndex = 119;
-            this.cbTipoItem.Text = "123";
             // 
             // txtPreco
             // 
@@ -188,7 +177,6 @@
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(121, 20);
             this.txtPreco.TabIndex = 118;
-            this.txtPreco.Text = " 123";
             // 
             // txtAno
             // 
@@ -196,7 +184,6 @@
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(83, 20);
             this.txtAno.TabIndex = 117;
-            this.txtAno.Text = " 123";
             // 
             // txtCodBar
             // 
@@ -204,7 +191,6 @@
             this.txtCodBar.Name = "txtCodBar";
             this.txtCodBar.Size = new System.Drawing.Size(83, 20);
             this.txtCodBar.TabIndex = 112;
-            this.txtCodBar.Text = " 123";
             // 
             // label7
             // 
@@ -235,7 +221,6 @@
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(147, 21);
             this.cbTipo.TabIndex = 107;
-            this.cbTipo.Text = "123";
             // 
             // txtDiretor
             // 
@@ -243,7 +228,6 @@
             this.txtDiretor.Name = "txtDiretor";
             this.txtDiretor.Size = new System.Drawing.Size(259, 20);
             this.txtDiretor.TabIndex = 99;
-            this.txtDiretor.Text = " 123";
             // 
             // label10
             // 
@@ -260,7 +244,6 @@
             this.txtVlCusto.Name = "txtVlCusto";
             this.txtVlCusto.Size = new System.Drawing.Size(121, 20);
             this.txtVlCusto.TabIndex = 97;
-            this.txtVlCusto.Text = " 123";
             // 
             // label6
             // 
@@ -304,7 +287,6 @@
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(259, 20);
             this.txtDescricao.TabIndex = 90;
-            this.txtDescricao.Text = " 123";
             // 
             // label2
             // 
@@ -385,90 +367,6 @@
             this.colunaNome.Name = "colunaNome";
             this.colunaNome.ReadOnly = true;
             this.colunaNome.Width = 200;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dtpDevolucao);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.dtpRetirada);
-            this.groupBox3.Controls.Add(this.txtTelCli);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.txtNomeCli);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Enabled = false;
-            this.groupBox3.Location = new System.Drawing.Point(12, 330);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(565, 157);
-            this.groupBox3.TabIndex = 40;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Situação";
-            // 
-            // dtpDevolucao
-            // 
-            this.dtpDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDevolucao.Location = new System.Drawing.Point(156, 90);
-            this.dtpDevolucao.Name = "dtpDevolucao";
-            this.dtpDevolucao.Size = new System.Drawing.Size(147, 20);
-            this.dtpDevolucao.TabIndex = 131;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(49, 93);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(106, 13);
-            this.label16.TabIndex = 130;
-            this.label16.Text = "Devolução Prevista: ";
-            // 
-            // dtpRetirada
-            // 
-            this.dtpRetirada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpRetirada.Location = new System.Drawing.Point(156, 55);
-            this.dtpRetirada.Name = "dtpRetirada";
-            this.dtpRetirada.Size = new System.Drawing.Size(147, 20);
-            this.dtpRetirada.TabIndex = 129;
-            // 
-            // txtTelCli
-            // 
-            this.txtTelCli.Location = new System.Drawing.Point(155, 125);
-            this.txtTelCli.Name = "txtTelCli";
-            this.txtTelCli.Size = new System.Drawing.Size(147, 20);
-            this.txtTelCli.TabIndex = 126;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(100, 128);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 13);
-            this.label12.TabIndex = 125;
-            this.label12.Text = "Telefone: ";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(61, 58);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(94, 13);
-            this.label13.TabIndex = 124;
-            this.label13.Text = "Data da Retirada: ";
-            // 
-            // txtNomeCli
-            // 
-            this.txtNomeCli.Location = new System.Drawing.Point(156, 20);
-            this.txtNomeCli.Name = "txtNomeCli";
-            this.txtNomeCli.Size = new System.Drawing.Size(306, 20);
-            this.txtNomeCli.TabIndex = 123;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(114, 23);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
-            this.label15.TabIndex = 122;
-            this.label15.Text = "Nome: ";
             // 
             // btnInserir
             // 
@@ -608,7 +506,7 @@
             this.gp.Controls.Add(this.btnBuscar);
             this.gp.Controls.Add(this.txtCod);
             this.gp.Controls.Add(this.label1);
-            this.gp.Location = new System.Drawing.Point(370, 8);
+            this.gp.Location = new System.Drawing.Point(103, 55);
             this.gp.Name = "gp";
             this.gp.Size = new System.Drawing.Size(368, 51);
             this.gp.TabIndex = 52;
@@ -652,7 +550,6 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -665,8 +562,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGeneros)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParticipacoes)).EndInit();
@@ -701,15 +596,6 @@
         private System.Windows.Forms.ComboBox cbTipoItem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvGeneros;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dtpDevolucao;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DateTimePicker dtpRetirada;
-        private System.Windows.Forms.TextBox txtTelCli;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtNomeCli;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAlterar;

@@ -126,11 +126,15 @@ namespace SistemaFilmes
             txtCod.Text=Convert.ToString(objitem.Codigo);
             txtDescricao.Text=objitem.Descricao;
             txtDiretor.Text=objitem.Diretor;
+            txtCodBar.Text = Convert.ToString(objitem.CodigoDeBarras);
+            txtAno.Text = Convert.ToString(objitem.Ano);
+            cbTipo.Text= Convert.ToString(objitem.Tipo);
             dtpCompra.Value=objitem.DtCompra;
             txtPreco.Text= Convert.ToString(objitem.Preco);
             cbTipoItem.Text=objitem.Tipo;
             txtVlCusto.Text= Convert.ToString(objitem.VlCusto);
             pbItem.Image = Image.FromStream(new MemoryStream(objitem.Imagem));
+            cbTipo.Text = "BLU RAY 3D";
             pbItem.Refresh();                  
 
             
